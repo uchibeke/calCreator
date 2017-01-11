@@ -1,7 +1,7 @@
 <div id="gift1"class="gift" ng-attr-style="{{previewStyle()}}">
 	<div id="pSpace1" ng-attr-style="{{previewStyle()}}">
 		<div id="CLogo" ng-attr-style="{{previewStyleInverse()}}">
-			<span class="bizName" ng-attr-style="{{previewStyleInverse()}}">东方明珠酒店</span>
+			<span class="bizName " ng-attr-style="{{previewStyleInverse()}}">东方明珠酒店</span>
 		</div>
 		<div id="leftSide">
 			<p class="pull-left text-center" id="personalizecMsg"  ng-repeat="str in $storage.userMsg">
@@ -11,14 +11,6 @@
 		<div id="imgDiv" ng-attr-style="{{previewStyle()}}">
 			<img ngf-src="$storage.UpldImgs[0]" class="img-responsive text-center"></img>
 		</div>
-		<!-- <div id="rightSide" >
-		<img alt="Add guest to see barcode" class="img-responsive text-center pull-right" ng-attr-style="{{previewStyle()}}"
-		src="{{barcodeSrc($storage.guestsList[0].id,$storage.ticketBgColor,$storage.ticketText)}}">
-		<span class="" style="font-size: 15pt;" ng-attr-style="{{previewStyle()}}">400-1806-999</span>
-		</div> -->
-		<!-- <div class="form-group " ng-repeat="file in imgs">
-		<img ngf-src="file" class="img-responsive text-center" style="max-height:100%; max-width:100%;"></img>
-		</div> -->
 		<div id="bottomOfSection"  ng-attr-style="{{previewStyleInverse()}}">
 			{{ $storage.options.bizDets | limitTo: 42 }}{{$storage.options.bizDets.length > 42 ? '...' : ''}}
 		</div>

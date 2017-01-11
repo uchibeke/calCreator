@@ -1,5 +1,5 @@
 /*
- Any-Month calendar script- Rob Patrick (rpatrick@mit.edu)
+ Adapted from Any-Month calendar script- Rob Patrick (rpatrick@mit.edu)
  Script featured on and available at:
  http://www.javascriptkit.com/
  */
@@ -13,9 +13,6 @@ function setToday() {
 		year = year + 1900;
 	// http://onyx.idbsu.edu/~ipowell
 	this.focusDay = day;
-	// document.getElementsByName("calControl")[0].month.selectedIndex = month;
-	// document.getElementsByName("calControl")[0].year.value = year;
-	// displayCalendar(month, year, document.getElementsByName("calPage")[0]);
 }
 
 function isFourDigitYear(year) {
@@ -33,7 +30,6 @@ function selectDate() {
 	if (isFourDigitYear(year)) {
 		var day = 0;
 		var month = document.getElementsByName("calControl")[0].month.selectedIndex;
-		// displayCalendar(month, year, document.getElementsByName("calPage")[0]);
 	}
 }
 
@@ -44,7 +40,6 @@ function setPreviousYear() {
 		var month = document.getElementsByName("calControl")[0].month.selectedIndex;
 		year--;
 		document.getElementsByName("calControl")[0].year.value = year;
-		// displayCalendar(month, year, document.getElementsByName("calPage")[0]);
 	}
 }
 
@@ -63,7 +58,6 @@ function setPreviousMonth() {
 			month--;
 		}
 		document.getElementsByName("calControl")[0].month.selectedIndex = month;
-		// displayCalendar(month, year, document.getElementsByName("calPage")[0]);
 	}
 }
 
@@ -80,7 +74,6 @@ function setNextMonth() {
 			month++;
 		}
 		document.getElementsByName("month")[0].selectedIndex = month;
-		// displayCalendar(month, year, document.getElementsByName("calPage")[0]);
 	}
 }
 
@@ -91,7 +84,6 @@ function setNextYear() {
 		var month = document.getElementsByName("month")[0].selectedIndex;
 		year++;
 		document.getElementsByName("year")[0].value = year;
-		// displayCalendar(month, year, document.getElementsByName("calPage")[0]);
 	}
 }
 

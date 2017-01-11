@@ -13,24 +13,10 @@
 				<h3 class="text-center">{{$storage.lan.nameBadge.content}}</h3>
 				<div >
 					<form role="form " id="upldForm">
-						<!-- <div class="form-group">
-						<label>How many images? </label>
-						<input class="form-control" type="text"
-						ng-model="$storage.options.numOfImages">
-						</div> -->
 						<button ngf-select ng-model="$storage.UpldImgs[0]" accept="image/*"
 						class="btn  btn-file btn-default">
 							{{$storage.lan.nameBadge.select}}
 						</button>
-						<!-- <div class="form-group " ng-repeat="files in arrOfFile($storage.options.numOfImages)">
-						<div>
-						Select Image
-						</div>
-						<button ngf-select ng-model="$storage.UpldImgs[$index]" accept="image/*"
-						class="btn  btn-file btn-default">
-						Select Picture
-						</button>
-						</div> -->
 						<div class="form-group">
 							<label>{{$storage.lan.nameBadge.eMsg}}</label>
 							<input class="form-control"  type="text" ng-change="getOnePerline ($storage.options.personalizedMsg)"
@@ -45,10 +31,6 @@
 				</div>
 				<div class="clearfix"></div>
 				<div class="col-xs-12">
-					<!-- <div ng-repeat="dCols in $storage.defaultColors" class="col-xs-4 text-center center-block" id="def-cols">
-					<span class="col-xs-6" ng-style="{'background-color': dCols.bg}"><i class="glyphicon glyphicon-stop"></i> </span>
-					<span class="col-xs-6" ng-style="{'background-color': dCols.txt}"><i class="glyphicon glyphicon-stop"></i> </span>
-					</div> -->
 					<div class="col-xs-12" >
 						<div class="text-center row ticketColors">
 							<div ng-repeat="dCols in $storage.defaultColors" class="col-xs-6 text-center center-block" id="def-cols"

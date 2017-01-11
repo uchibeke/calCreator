@@ -14,11 +14,6 @@
 		<div id="imgDiv" ng-attr-style="{{previewStyle()}}">
 			<img ngf-src="$storage.UpldImgs[0]" class="img-responsive text-center"></img>
 		</div>
-		<!-- <div id="rightSide" >
-			<img alt="Add guest to see barcode" class="img-responsive text-center pull-right" ng-attr-style="{{previewStyle()}}"
-			src="{{barcodeSrc($storage.guestsList[0].id,$storage.ticketBgColor,$storage.ticketText)}}">
-			<span class="" style="font-size: 15pt;" ng-attr-style="{{previewStyle()}}">400-1806-999</span>
-		</div> -->
 		<div id="bottomOfSection"  ng-attr-style="{{previewStyleInverse()}}">
 			{{ $storage.options.bizDets | limitTo: 42 }}{{$storage.options.bizDets.length > 42 ? '...' : ''}}
 		</div>
