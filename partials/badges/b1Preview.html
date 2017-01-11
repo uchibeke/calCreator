@@ -1,0 +1,36 @@
+<div id="gift1"class="gift" ng-attr-style="{{previewStyle()}}">
+	<div id="pSpace1" ng-attr-style="{{previewStyle()}}">
+		<div id="CLogo" ng-attr-style="{{previewStyleInverse()}}">
+			<span class="bizName" ng-attr-style="{{previewStyleInverse()}}">东方明珠酒店</span>
+		</div>
+		<div id="leftSide">
+			<p class="pull-left text-center" id="personalizecMsg"  ng-repeat="str in $storage.userMsg">
+				<span ng-bind-html="str"  ng-attr-style="{{previewStyle()}}"></span>
+			</p>
+		</div>
+		<div id="imgDiv" ng-attr-style="{{previewStyle()}}">
+			<img ngf-src="$storage.UpldImgs[0]" class="img-responsive text-center"></img>
+		</div>
+		<!-- <div id="rightSide" >
+		<img alt="Add guest to see barcode" class="img-responsive text-center pull-right" ng-attr-style="{{previewStyle()}}"
+		src="{{barcodeSrc($storage.guestsList[0].id,$storage.ticketBgColor,$storage.ticketText)}}">
+		<span class="" style="font-size: 15pt;" ng-attr-style="{{previewStyle()}}">400-1806-999</span>
+		</div> -->
+		<!-- <div class="form-group " ng-repeat="file in imgs">
+		<img ngf-src="file" class="img-responsive text-center" style="max-height:100%; max-width:100%;"></img>
+		</div> -->
+		<div id="bottomOfSection"  ng-attr-style="{{previewStyleInverse()}}">
+			{{ $storage.options.bizDets | limitTo: 42 }}{{$storage.options.bizDets.length > 42 ? '...' : ''}}
+		</div>
+	</div>
+	<div class="text-center month" style="display: inline;float: left;">
+		<h4  ng-attr-style="{{previewStyleInverseBg()}}">{{$storage.lan.nameBadge.getDeal}}</h4>
+		<img alt="Add guest to see barcode" class="img-responsive"
+		src="{{barcodeSrc($storage.guestsList[0].id,'#ffffff','#000000')}}">
+		<span style="font-size: 10pt;" id="calBody">400-1806-999</span>
+	</div>
+	<div ng-repeat="cal in $storage.options.cals" class="text-left month">
+		<h4  ng-attr-style="{{previewStyleInverseBg()}}">{{ make2Dig(cal.month)}},  {{cal.year}}</h4>
+		<p ng-bind-html="dispCal(cal.month, cal.year)" id="calBody"></p>
+	</div>
+</div>
