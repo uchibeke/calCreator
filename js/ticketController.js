@@ -40,25 +40,6 @@ function($rootScope, $scope, $http, $localStorage, $sce, Upload, $timeout, analy
 
 	$scope.bc = 10;
 
-	// File upload
-	$scope.upload = function(dataUrl) {
-		Upload.upload({
-			url : 'https://angular-file-upload-cors-srv.appspot.com/upload',
-			data : {
-				file : Upload.dataUrltoBlob(dataUrl)
-			},
-		}).then(function(response) {
-			$timeout(function() {
-				$scope.result = response.data;
-			});
-		}, function(response) {
-			if (response.status > 0)
-				$scope.errorMsg = response.status + ': ' + response.data;
-		}, function(evt) {
-			$scope.progress = parseInt(100.0 * evt.loaded / evt.total);
-		});
-	};
-
 	$scope.showTicket = function(ind) {
 		for (var i; i < ss.length; i++) {
 			if (i == ind) {
@@ -163,13 +144,6 @@ function($rootScope, $scope, $http, $localStorage, $sce, Upload, $timeout, analy
 		popupWin.document.write(top + printContents + bottom);
 		popupWin.document.close();
 	};
-
-	// For security reasons, get IP address, time and location of user at time of generating ticket
-	// and add it to each printed ticket.
-	$.get("http://ipinfo.io", function(r) {
-		var d = new Date().toLocaleDateString();
-		ss.secEncoding = r.ip + "|" + d;
-	}, "jsonp");
 
 	ss.user = ss.user != undefined ? ss.user : {};
 	ss.user.styles = ss.user.styles != undefined ? ss.user.styles : {};
