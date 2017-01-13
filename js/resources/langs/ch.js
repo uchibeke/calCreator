@@ -43,6 +43,7 @@ var ch = {
 		"eBiz" : "输入公司信息",
 		"genAt" : "设计姓名卡",
 		"bizNameInst" : "输入商家名称",
-		"pNum" : "电话号码"
+		"pNum" : "电话号码",
+		"logo" : "images/logo-ch.png"
 	}
 };

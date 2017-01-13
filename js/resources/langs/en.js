@@ -43,6 +43,7 @@ var en = {
 		"eBiz" : "Enter Business detail",
 		"genAt" : "badges designed and generated at",
 		"bizNameInst" : "Enter your company name",
-		"pNum" : "Phone number"
+		"pNum" : "Phone number",
+		"logo" : "images/logo-en.png"
 	}
 }; 
