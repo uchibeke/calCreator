@@ -44,6 +44,13 @@ var ch = {
 		"genAt" : "设计姓名卡",
 		"bizNameInst" : "输入商家名称",
 		"pNum" : "电话号码",
-		"logo" : "images/logo-ch.png"
+		"logo" : "images/logo-ch.png",
+		"editDeal" : "添加/更改促销",
+		"editCal" : "编辑日历",
+		"dealDesc" : "关于促销",
+		"dealSavings" : "多少储蓄/他们会得到什么",
+		"dealStart" : "促销开始",
+		"dealEnd" : "促销结束",
+		"submitDeal" : "添加促销"
 	}
 };

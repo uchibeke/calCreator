@@ -44,6 +44,13 @@ var en = {
 		"genAt" : "badges designed and generated at",
 		"bizNameInst" : "Enter your company name",
 		"pNum" : "Phone number",
-		"logo" : "images/logo-en.png"
+		"logo" : "images/logo-en.png",
+		"editDeal" : "Add/Change Deal",
+		"editCal" : "Edit Calendar",
+		"dealDesc" : "About deal",
+		"dealSavings" : "How much savings/What will they get",
+		"dealStart" : "Start Date",
+		"dealEnd" : "End Date",
+		"submitDeal" : "Submit Deal"
 	}
 }; 

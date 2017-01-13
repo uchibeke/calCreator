@@ -1,17 +1,9 @@
-function namebadgeOps($rootScope, $scope, $http, $localStorage) {
+function calendarOps($rootScope, $scope, $http, $localStorage) {
 
 	var ss = $scope.$storage;
 
 	ss.options = ss.options ? ss.options : {};
 	ss.options.badge = ss.options.badge ? ss.options.badge : {};
-
-	ss.options.badge.fNameCol = 1;
-	ss.options.badge.lNameCol = 2;
-	ss.options.badge.emailCol = 3; 
-	ss.options.badge.titleCol = 4;
-	ss.options.badge.companyCol = 5;
-	ss.options.badge.firstTxt = "Follow us on Twitter"; 
-	ss.options.badge.secondTxt = "Learn how to make yours at eventstone.io"; 
 	
 	$scope.printBadges = function() {
 		var printContents = document.getElementById("printableBadge").innerHTML;
@@ -108,7 +100,7 @@ function namebadgeOps($rootScope, $scope, $http, $localStorage) {
 		return toOutPut;
 	}
 	
-	$scope.getNextMntAndYr = function (month, year) {
+	function getNextMntAndYr (month, year) {
 		var day = 0;
 		if (month == 11) {
 			month = 0;
@@ -125,31 +117,25 @@ function namebadgeOps($rootScope, $scope, $http, $localStorage) {
 		var now = new Date();
 		var month = now.getMonth();
 		var year = now.getYear();
-		if (year < 2000)// Y2K Fix, Isaac Powell
+		if (year < 2000){ // Y2K Fix, Isaac Powell
 			year = year + 1900;
+		}
 		return {
 			"month" : month,
 			"year" : year
 		}
 	}
 	
-	// init
+	// init calendar starting from current month
 	ss.options.cals = [];
 	ss.options.setMonths  = function (numOfMonthsToGen) {
 		var current = getThisMonthYr();
 		for (var i = 0; i < numOfMonthsToGen; i++) {
 			ss.options.cals.push(current);
-			current = $scope.getNextMntAndYr(current.month, current.year);
+			current = getNextMntAndYr(current.month, current.year);
 		}
 	}
 	ss.options.setMonths (14);
-		
-	$scope.showCals = function () {
-		for (var i = 0; i < ss.options.cals(16).length; i++) {
-			// console.log(ss.options.cals(16)[i]);
-			$scope.dispCal (1, 2017, ss.options.cals(16)[i]);
-		}
-	}
 	
 	$scope.getOnePerline = function  (str) {
 		var toRet = [];
@@ -172,6 +158,18 @@ function namebadgeOps($rootScope, $scope, $http, $localStorage) {
 		return ("0" + (num+1)).slice(-2);
 	}
 	$scope.getOnePerline  (ss.options.personalizedMsg);
+	
+	$scope.selectDefaultCol = function(bg, txt) {
+		ss.ticketBgColor = bg;
+		ss.ticketText = txt;
+		// $scope.userFillColor = ss.ticketBgColor;
+	};
+	
+	ss.ticketBgColor = ss.ticketBgColor ? ss.ticketBgColor : "#F50632" ;
+	ss.ticketText = ss.ticketText ? ss.ticketText : "#F6BC5F";
+	
+	
+	
 	
 	$scope.$storage.defaultColors = [{
 			"bg" : "#F50632",
@@ -230,13 +228,5 @@ function namebadgeOps($rootScope, $scope, $http, $localStorage) {
 		}
 	]
 	
-	
-	$scope.selectDefaultCol = function(bg, txt) {
-		ss.ticketBgColor = bg;
-		ss.ticketText = txt;
-		// $scope.userFillColor = ss.ticketBgColor;
-	};
-	ss.ticketBgColor = ss.ticketBgColor ? ss.ticketBgColor : "#F50632" ;
-	ss.ticketText = ss.ticketText ? ss.ticketText : "#F6BC5F";
 	
 }

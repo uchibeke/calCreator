@@ -8,7 +8,6 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, an
 	ss.options = ss.options ? ss.options : {};
 	ss.options.hideCheckin = [];
 
-
 	var user,
 	    allRef,
 	    ref,
@@ -27,5 +26,7 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, an
 	}
 
 	$scope.loading = [];
+	
+	
 
 }]);

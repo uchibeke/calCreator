@@ -401,8 +401,8 @@ a {
 	background-color: #F50057 !important;
 	border: 2px solid #fff !important;
 }
-.btn:focus, .btn:hover{
-	outline:0 !important;
+.btn:focus, .btn:hover {
+	outline: 0 !important;
 }
 
 .btn-primary, .btn-default {
@@ -674,11 +674,8 @@ body {
 }
 
 .slick-arrow {
-	/*filter: invert() !important;
-	-webkit-filter: invert() !important;
-	-moz-filter: invert() !important;
-	-ms-filter: invert() !important;*/
 	margin: 20px;
+	padding: 20px;
 	z-index: 100;
 	background: #F50057 !important;
 }
@@ -690,7 +687,24 @@ body {
 #def-cols span {
 	/*font-size: 30px !important;*/
 	border: 1px solid black !important;
-	color:transparent;
-	float:left;
+	color: transparent;
+	float: left;
 	display: inline;
+}
+
+.fadein, .fadeout {
+	-webkit-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s;
+	-moz-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s;
+	-o-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s;
+	transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s;
+}
+
+.fadein.ng-hide-remove, .fadeout.ng-hide-add.ng-hide-add-active {
+	opacity: 0;
+	display: block !important;
+}
+
+.fadeout.ng-hide-add, .fadein.ng-hide-remove.ng-hide-remove-active {
+	opacity: 1;
+	display: block !important;
 }

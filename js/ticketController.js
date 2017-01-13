@@ -1,39 +1,34 @@
-var ticketControllers = angular.module('ticketControllers', ['ngStorage', 'ngSanitize', 'ngFileUpload', 'ngImgCrop', 'slick','ngAnimate']);
+var ticketControllers = angular.module('ticketControllers', ['ngStorage', 'ngSanitize', "firebase", 'ngFileUpload', 'ngImgCrop', 'slick', 'ngAnimate']);
 
 ticketControllers.controller('TicketController', ['$rootScope', '$scope', '$http', '$localStorage', '$sce', 'Upload', '$timeout', 'analytics', '$firebaseObject', '$firebaseArray', '$firebaseAuth', 'shareDataService',
 function($rootScope, $scope, $http, $localStorage, $sce, Upload, $timeout, analytics, $firebaseObject, $firebaseArray, $firebaseAuth, shareDataService) {
-	
-	
+
 	$scope.$storage = $localStorage.$default({
 		ticket : $scope.ticketdata,
 	});
-	
+
 	var ss = $scope.$storage;
-	
+
 	$http.get('js/resources/crayola.json').then(function(result) {
 		var xx = result.data;
-				
+
 		$http.get('js/resources/styles.json').then(function(result2) {
 			ss.style = result2.data.concat(xx).concat(manyColors);
 		}, function(error) {
 			console.log(error);
 		}).finally(function() {
 		});
-		
-		
+
 	}, function(error) {
 		console.log(error);
 	}).finally(function() {
 	});
-	
-	
+
 	$http.get('js/resources/ticketVariants.json').then(function(result) {
 		$scope.ticketVariants = result.data;
 	}, function(result) {
 	}).finally(function() {
-		console.log("finally finished repos");
 	});
-
 
 	$scope.ticketOrder = 'ticketTitle';
 	$scope.ticketSearch = '';
@@ -63,26 +58,24 @@ function($rootScope, $scope, $http, $localStorage, $sce, Upload, $timeout, analy
 	}
 
 	$scope.previewStyle = function() {
-		return "background-color: " +  ss.ticketBgColor + "!important;" + "color: " + ss.ticketText + "!important;";
+		return "background-color: " + ss.ticketBgColor + "!important;" + "color: " + ss.ticketText + "!important;";
 	}
 
 	$scope.previewStyleInverse = function() {
-		return "color: " +  ss.ticketBgColor + "!important;" + "background-color: " + ss.ticketText + "!important;";
+		return "color: " + ss.ticketBgColor + "!important;" + "background-color: " + ss.ticketText + "!important;";
 	}
 
 	$scope.previewStyleBg = function() {
-		return "background-color: " +  ss.ticketBgColor + "!important;" ;
+		return "background-color: " + ss.ticketBgColor + "!important;";
 	}
-	
 
 	$scope.previewStyleTxt = function() {
 		return "color: " + ss.ticketText + "!important;";
 	}
 
 	$scope.previewStyleInverseBg = function() {
-		return "color: " +  'white' + "!important;" + "background-color: " + ss.ticketText + "!important;";
+		return "color: " + 'white' + "!important;" + "background-color: " + ss.ticketText + "!important;";
 	}
-	
 	var ticketColorFilter = function(givenCol) {
 		var col = givenCol;
 		if (col != undefined) {
@@ -118,51 +111,21 @@ function($rootScope, $scope, $http, $localStorage, $sce, Upload, $timeout, analy
 		};
 	};
 
-	$scope.printTickets = function() {
-		var printContents = document.getElementById("printable").innerHTML;
-		var popupWin = window.open('', '_blank', 'width=1700,height=2200');
-		popupWin.document.open();
-		var top = `
-		<html>
-			<head>
-				<link rel="stylesheet" media="all"  href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed">
-				<link rel="stylesheet" media="all" href="css/style.css">
-				<link rel="stylesheet" media="all" href="css/tStyles/t1Style.css">
-				<link rel="stylesheet" media="all" href="css/tStyles/t2Style.css">
-				<link rel="stylesheet" media="all" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
-			</head>
-			<body onload="window.print()" 
-			style="print-color-adjust: exact !important;
-			-moz-print-color-adjust: exact !important;
-			-webkit-print-color-adjust: exact !important;
-			font-family: "Roboto Condensed",  monospace, sans-serif !important;">`;
-		
-		var bottom = `
-			</body>
-		</html>`
-		
-		popupWin.document.write(top + printContents + bottom);
-		popupWin.document.close();
-	};
-
 	ss.user = ss.user != undefined ? ss.user : {};
 	ss.user.styles = ss.user.styles != undefined ? ss.user.styles : {};
 	if (ss.user.styles.selectedTicFormat == undefined && ss.user.styles.selectedTicFormatPre == undefined) {
 		ss.user.styles.selectedTicFormat = 'partials/tickets/t1.html';
-		ss.user.styles.selectedTicFormatPre = 'partials/tickets/t1Preview.html';
 	}
-	
+
 	ss.user.styles.ticketFormats = {
-		'formats' : ['partials/tickets/t1.html', 'partials/tickets/t2.html', 'partials/tickets/t3.html'],
-		'preview' : ['partials/tickets/t1Preview.html', 'partials/tickets/t2Preview.html', 'partials/tickets/t3Preview.html']
+		'formats' : ['partials/tickets/t1.html', 'partials/tickets/t2.html', 'partials/tickets/t3.html']
 	};
-	
-	
+
 	// Limit number of badges and tickets to 10 because of the way this works
 	ss.user.styles.setSelectedInd = function() {
 		ss.user.styles.selectedInd = undefined;
 		if ($('.choices').find('.slick-active')[1] != undefined) {
-			ss.user.styles.selectedInd  = Number($('.choices').find('.slick-active')[1].getAttribute('id').slice(-1));
+			ss.user.styles.selectedInd = Number($('.choices').find('.slick-active')[1].getAttribute('id').slice(-1));
 		}
 	};
 
@@ -173,21 +136,20 @@ function($rootScope, $scope, $http, $localStorage, $sce, Upload, $timeout, analy
 			ss.user.print.BToPrint = [list];
 		}
 	};
-	
-	$scope.changeLan = function (lan) {
+
+	$scope.changeLan = function(lan) {
 		console.log("lan");
 		$rootScope.$storage.lan = lan;
 		// location.reload();
 	};
-	
-	
-	namebadgeOps($rootScope, $scope, $http,  $localStorage);
-	
-	
+
+	calendarOps($rootScope, $scope, $http, $localStorage);
+	dealOps($rootScope, $scope, $http, $localStorage, $firebaseObject, $firebaseArray, $firebaseAuth);
+
 	$rootScope.$storage.en = en;
 	$rootScope.$storage.ch = ch;
-	
-	// $rootScope.$storage.lan =  $rootScope.$storage.ch ;
-	$rootScope.$storage.lan = $rootScope.$storage.lan ? $rootScope.$storage.lan :  $rootScope.$storage.ch ;
+
+	$rootScope.$storage.lan = $rootScope.$storage.ch;
+	$rootScope.$storage.lan = $rootScope.$storage.lan ? $rootScope.$storage.lan : $rootScope.$storage.ch;
 }]);
 

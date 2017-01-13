@@ -1,17 +1,23 @@
 <section class="guestinfo  container-fluid animated slideInRight pg" id="badgePage">
 	<div class="hideOnPrint" ng-hide="printSet">
 		<div class=" center-block row text-center"  style="position: fixed;top: 25px;right: 25px">
-			<div class="center-block">
-				<a   type="button" class="btn btn-default btn-lg" 
-				ng-click="$storage.user.styles.setSelectedInd();printSet=!printSet;"
-				> <span class="glyphicon glyphicon-print"></span> </a>
-			</div>
+			<button   type="button" class="btn btn-default btn-lg"
+			ng-click="$storage.user.styles.setSelectedInd();printSet=!printSet;">
+				<span class="glyphicon glyphicon-print"></span>
+			</button>
+		</div>
+		<div  style="position: fixed;top: 25px;left: 25px" >
+			<button   type="button" class="btn btn-default"
+			ng-click="customizeDeal=!customizeDeal;">
+				<span class="" ng-show="!customizeDeal">Add/Change Deal</span>
+				<span class="" ng-show="customizeDeal">Edit Calender</span>
+			</button>
 		</div>
 		<h1 class="text-center">{{$storage.lan.nameBadge.title}}</h1>
-		<div class="row dataFieldContainer  center-block ">
+		<div class="row   center-block ">
 			<div class="col-sm-2 col-xs-12 pull-left ticketContent">
 				<h3 class="text-center">{{$storage.lan.nameBadge.content}}</h3>
-				<div >
+				<div ng-show="!customizeDeal"  class="fadein fadeout">
 					<form role="form " id="upldForm">
 						<button ngf-select ng-model="$storage.UpldImgs[0]" accept="image/*"
 						class="btn  btn-file btn-default">
@@ -19,17 +25,17 @@
 						</button>
 						<div class="form-group">
 							<label>{{$storage.lan.nameBadge.bizNameInst}}</label>
-							<input class="form-control"  type="text" ng-change="getOnePerline ($storage.options.personalizedMsg)"
+							<input class="form-control"  type="text"
 							ng-model="$storage.options.BizName">
 						</div>
 						<div class="form-group">
 							<label>{{$storage.lan.nameBadge.eBiz}}</label>
-							<input class="form-control"  type="text" ng-change="getOnePerline ($storage.options.personalizedMsg)"
+							<input class="form-control"  type="text"
 							ng-model="$storage.options.bizDets">
 						</div>
 						<div class="form-group">
 							<label>{{$storage.lan.nameBadge.pNum}}</label>
-							<input class="form-control"  type="text" ng-change="getOnePerline ($storage.options.personalizedMsg)"
+							<input class="form-control"  type="text"
 							ng-model="$storage.options.pNum">
 						</div>
 						<div class="form-group">
@@ -38,63 +44,48 @@
 							ng-model="$storage.options.personalizedMsg">
 						</div>
 					</form>
-				</div>
-				<div class="clearfix"></div>
-				<div class="col-xs-12">
-					<div class="col-xs-12" >
-						<div class="text-center row ticketColors">
-							<div ng-repeat="dCols in $storage.defaultColors" class="col-xs-6 text-center center-block" id="def-cols"
-							ng-click="selectDefaultCol(dCols.bg,dCols.txt)">
-								<span class="col-xs-6" ng-style="{'background-color': dCols.bg}"><i class="glyphicon glyphicon-stop"></i> </span>
-								<span class="col-xs-6" ng-style="{'background-color': dCols.txt}"><i class="glyphicon glyphicon-stop"></i> </span>
-							</div>
-						</div >
-					</div>
-				</div>
-				<!-- <div class="col-xs-6" >
-					<div class="text-center row ticketColors">
-						<div class="styleBtns cf" ng-repeat="item in $storage.style | orderBy:'-' ">
-							<a ng-click="ticketBackground(item.hex)">
-							<div type="button" class="btn  btn-xs "
-							ng-style="textBtnStyle(item.hex)"
-							style="">
-								&nbsp;
-							</div> </a>
-						</div>
-					</div >
-					<br />
-					<div class="text-center row">
-						<input ng-model="userFillColor" class="row text-center" style="width: 100%;" placeholder="color"
-						/>
-						<br />
-						<button  type="button" class="btn btn-primary btn-xs " ng-click="ticketBackground(userFillColor)">
-							{{$storage.lan.nameBadge.enter}}
-						</button>
-
-					</div>
-				</div>
-				<div class="col-xs-6">
-					<div class="text-center row ticketColors">
-						<div class="styleBtns_Txt cf" ng-repeat="item in $storage.style">
-							<a ng-click="ticketTxtColor(item.hex);">
-							<div type="button" class="btn btn-xs "
-							ng-style="textBtnStyle(item.hex)"
-							style="">
-								&nbsp;
-							</div> </a>
+					<div class="clearfix"></div>
+					<div class="col-xs-12">
+						<div class="col-xs-12" >
+							<div class="text-center row ticketColors">
+								<div ng-repeat="dCols in $storage.defaultColors" class="col-xs-6 text-center center-block" id="def-cols"
+								ng-click="selectDefaultCol(dCols.bg,dCols.txt)">
+									<span class="col-xs-6" ng-style="{'background-color': dCols.bg}"><i class="glyphicon glyphicon-stop"></i> </span>
+									<span class="col-xs-6" ng-style="{'background-color': dCols.txt}"><i class="glyphicon glyphicon-stop"></i> </span>
+								</div>
+							</div >
 						</div>
 					</div>
-					<br />
-					<div class="text-center row">
-						<input ng-model="userTextColor" class="row text-center" style="width: 100%;" placeholder="color"
-						/>
-						<br />
-						<button  type="button" class="btn btn-primary btn-xs " ng-click="ticketTxtColor(userTextColor)">
-							{{$storage.lan.nameBadge.enter}}
+				</div>
+				<div ng-show="customizeDeal" class="fadein fadeout">
+					<form role="form ">
+						<div class="form-group">
+							<label>{{$storage.lan.nameBadge.dealDesc}}</label>
+							<input class="form-control"  type="text"
+							ng-model="$storage.options.dealDesc">
+						</div>
+						<div class="form-group">
+							<label>{{$storage.lan.nameBadge.dealSavings}}</label>
+							<input class="form-control"  type="text"
+							ng-model="$storage.options.dealSavings">
+						</div>
+						<div class="form-group">
+							<label>{{$storage.lan.nameBadge.dealStart}}</label>
+							<input class="form-control"  type="text"
+							ng-model="$storage.options.dealStart">
+						</div>
+						<div class="form-group">
+							<label>{{$storage.lan.nameBadge.dealEnd}}</label>
+							<input class="form-control"  type="text"
+							ng-model="$storage.options.dealEnd">
+						</div>
+						<button ng-click="updateDeal($storage.options.BizName,$storage.options.dealDesc,
+						$storage.options.dealSavings,$storage.options.dealStart,$storage.options.dealEnd)"
+						class="btn  btn-file btn-default">
+							{{$storage.lan.nameBadge.submitDeal}}
 						</button>
-					</div>
-					<br />
-				</div> -->
+					</form>
+				</div>
 			</div>
 			<div class="col-sm-10 col-xs-12 ticketPreview">
 				<h3 class="text-center row center-block">{{$storage.lan.nameBadge.preview}}</h3>
