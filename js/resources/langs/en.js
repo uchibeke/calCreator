@@ -41,6 +41,8 @@ var en = {
 		"getDeal" : "Get Your Deal",
 		"eMsg" : "Enter a personalized message",
 		"eBiz" : "Enter Business detail",
-		"genAt" : "badges designed and generated at"
+		"genAt" : "badges designed and generated at",
+		"bizNameInst" : "Enter your company name",
+		"pNum" : "Phone number"
 	}
 }; 

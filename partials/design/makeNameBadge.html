@@ -1,8 +1,8 @@
 <section class="guestinfo  container-fluid animated slideInRight pg" id="badgePage">
 	<div class="hideOnPrint" ng-hide="printSet">
-		<div class=" center-block row text-center pull-right">
+		<div class=" center-block row text-center"  style="position: fixed;top: 25px;right: 25px">
 			<div class="center-block">
-				<a   type="button" class="btn btn-default btn-lg"
+				<a   type="button" class="btn btn-default btn-lg" 
 				ng-click="$storage.user.styles.setSelectedInd();printSet=!printSet;"
 				> <span class="glyphicon glyphicon-print"></span> </a>
 			</div>
@@ -18,14 +18,24 @@
 							{{$storage.lan.nameBadge.select}}
 						</button>
 						<div class="form-group">
-							<label>{{$storage.lan.nameBadge.eMsg}}</label>
+							<label>{{$storage.lan.nameBadge.bizNameInst}}</label>
 							<input class="form-control"  type="text" ng-change="getOnePerline ($storage.options.personalizedMsg)"
-							ng-model="$storage.options.personalizedMsg">
+							ng-model="$storage.options.BizName">
 						</div>
 						<div class="form-group">
 							<label>{{$storage.lan.nameBadge.eBiz}}</label>
 							<input class="form-control"  type="text" ng-change="getOnePerline ($storage.options.personalizedMsg)"
 							ng-model="$storage.options.bizDets">
+						</div>
+						<div class="form-group">
+							<label>{{$storage.lan.nameBadge.pNum}}</label>
+							<input class="form-control"  type="text" ng-change="getOnePerline ($storage.options.personalizedMsg)"
+							ng-model="$storage.options.pNum">
+						</div>
+						<div class="form-group">
+							<label>{{$storage.lan.nameBadge.eMsg}}</label>
+							<input class="form-control"  type="text" ng-change="getOnePerline ($storage.options.personalizedMsg)"
+							ng-model="$storage.options.personalizedMsg">
 						</div>
 					</form>
 				</div>
@@ -99,10 +109,7 @@
 		</div>
 	</div >
 	<div ng-hide="!printSet">
-		<div class="pull-left ">
-			<br />
-			<br />
-			<br />
+		<div class="pull-left "    style="position: fixed;top: 25px;left: 25px" >
 			<button   type="button" class="btn btn-default  btn-xs"
 			ng-click="printSet=!printSet;">
 				<span class="glyphicon glyphicon-chevron-left"></span>

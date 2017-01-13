@@ -177,7 +177,7 @@ function($rootScope, $scope, $http, $localStorage, $sce, Upload, $timeout, analy
 	$scope.changeLan = function (lan) {
 		console.log("lan");
 		$rootScope.$storage.lan = lan;
-		location.reload();
+		// location.reload();
 	};
 	
 	
@@ -187,6 +187,7 @@ function($rootScope, $scope, $http, $localStorage, $sce, Upload, $timeout, analy
 	$rootScope.$storage.en = en;
 	$rootScope.$storage.ch = ch;
 	
+	// $rootScope.$storage.lan =  $rootScope.$storage.ch ;
 	$rootScope.$storage.lan = $rootScope.$storage.lan ? $rootScope.$storage.lan :  $rootScope.$storage.ch ;
 }]);
 

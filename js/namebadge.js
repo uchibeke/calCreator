@@ -152,8 +152,8 @@ function namebadgeOps($rootScope, $scope, $http, $localStorage) {
 	}
 	
 	$scope.getOnePerline = function  (str) {
+		var toRet = [];
 		if (str) {
-			var toRet = [];
 			var bigarray = str.split("");
 			var size = 16;
 			for (var i=0; i<bigarray.length && toRet.length < 3; i+=size) {
@@ -164,22 +164,9 @@ function namebadgeOps($rootScope, $scope, $http, $localStorage) {
 				}
 				toRet.push(myString);
 			}
-			ss.userMsg = toRet;
 		}
+		ss.userMsg = toRet;
 	}
-	
-// 	
-	// ss.getOnePerlineNum = function  (str) {
-		// delete ss.bizPhoneNum ;
-		// if (str) {
-			// ss.bizPhoneNum  = "";
-			// var item = str.split("");
-			// for (var j = 0; j < item.length; j++) {
-				// ss.bizPhoneNum += item[j] + "</br>";
-			// }
-		// }
-	// }
-	// ss.getOnePerlineNum("400-1806-999");
 	
 	$scope.make2Dig = function (num) {
 		return ("0" + (num+1)).slice(-2);
@@ -187,8 +174,11 @@ function namebadgeOps($rootScope, $scope, $http, $localStorage) {
 	$scope.getOnePerline  (ss.options.personalizedMsg);
 	
 	$scope.$storage.defaultColors = [{
-			"bg" : "#FFD700",
-			"txt" : "Red"
+			"bg" : "#F50632",
+			"txt" : "#F6BC5F"
+		},{
+			"bg" : "#F6BC5F",
+			"txt" : "#F50632"
 		},{
 			"bg" : "#FFFFFF",
 			"txt" : "#191970"
@@ -214,7 +204,10 @@ function namebadgeOps($rootScope, $scope, $http, $localStorage) {
 			"bg" : "#FDD9B5",
 			"txt" : "#1164B4"
 		},{
-			"bg" : "WhiteSmoke",
+			"bg" : "#A48A55",
+			"txt" : "#393224"
+		},{
+			"bg" : "#fffffE",
 			"txt" : "#F664AF"
 		},{
 			"bg" : "#FF2B2B",
@@ -233,7 +226,7 @@ function namebadgeOps($rootScope, $scope, $http, $localStorage) {
 			"txt" : "#414A4C"
 		},{
 			"bg" : "#ffffff",
-			"txt" : "Red"
+			"txt" : "#F50632"
 		}
 	]
 	
@@ -243,7 +236,7 @@ function namebadgeOps($rootScope, $scope, $http, $localStorage) {
 		ss.ticketText = txt;
 		// $scope.userFillColor = ss.ticketBgColor;
 	};
-	ss.ticketBgColor = ss.ticketBgColor ? ss.ticketBgColor : "#0f124a" ;
-	ss.ticketText = ss.ticketText ? ss.ticketText : "#ffa642";
+	ss.ticketBgColor = ss.ticketBgColor ? ss.ticketBgColor : "#F50632" ;
+	ss.ticketText = ss.ticketText ? ss.ticketText : "#F6BC5F";
 	
 }

@@ -41,6 +41,8 @@ var ch = {
 		"getDeal" : "您的折扣",
 		"eMsg" : "输入个性化消息",
 		"eBiz" : "输入公司信息",
-		"genAt" : "设计姓名卡"
+		"genAt" : "设计姓名卡",
+		"bizNameInst" : "输入商家名称",
+		"pNum" : "电话号码"
 	}
 };
