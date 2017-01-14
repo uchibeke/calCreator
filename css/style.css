@@ -421,20 +421,26 @@ a {
 	top: 0 !important;
 	bottom: 0 !important;
 	border: none !important;
-	color: gray !important;
 	font-size: 1.3em;
+}
+
+#dealPage {
+	min-height:100%;
+	min-width:100%;
+	position:absolute !important;
+	color:white !important;
+}
+
+
+#dealPage .jumbotron {
+	background-color:inherit !important;
 }
 
 #home_welcome, .brandTitle {
 	font-weight: 600 !important;
-	color: #F5F5F5 !important;
 	position: fixed;
 	top: 2%;
 	left: 2%;
-}
-
-#home_welcome h1 {
-	color: #F5F5F5 !important;
 }
 
 #homeInput {

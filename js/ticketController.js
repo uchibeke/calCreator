@@ -1,7 +1,7 @@
 var ticketControllers = angular.module('ticketControllers', ['ngStorage', 'ngSanitize', "firebase", 'ngFileUpload', 'ngImgCrop', 'slick', 'ngAnimate']);
 
-ticketControllers.controller('TicketController', ['$rootScope', '$scope', '$http', '$localStorage', '$sce', 'Upload', '$timeout', 'analytics', '$firebaseObject', '$firebaseArray', '$firebaseAuth', 'shareDataService',
-function($rootScope, $scope, $http, $localStorage, $sce, Upload, $timeout, analytics, $firebaseObject, $firebaseArray, $firebaseAuth, shareDataService) {
+ticketControllers.controller('TicketController', ['$rootScope', '$scope', '$http', '$localStorage', '$sce', 'Upload', '$timeout', 'analytics', '$firebaseObject', '$firebaseArray', '$firebaseAuth', 'shareDataService', '$location',
+function($rootScope, $scope, $http, $localStorage, $sce, Upload, $timeout, analytics, $firebaseObject, $firebaseArray, $firebaseAuth, shareDataService, $location) {
 
 	$scope.$storage = $localStorage.$default({
 		ticket : $scope.ticketdata,
@@ -144,7 +144,7 @@ function($rootScope, $scope, $http, $localStorage, $sce, Upload, $timeout, analy
 	};
 
 	calendarOps($rootScope, $scope, $http, $localStorage);
-	dealOps($rootScope, $scope, $http, $localStorage, $firebaseObject, $firebaseArray, $firebaseAuth);
+	dealOps($rootScope, $scope, $http, $localStorage, $firebaseObject, $firebaseArray, $firebaseAuth, $location);
 
 	$rootScope.$storage.en = en;
 	$rootScope.$storage.ch = ch;

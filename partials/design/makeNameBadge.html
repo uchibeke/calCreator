@@ -9,8 +9,8 @@
 		<div  style="position: fixed;top: 25px;left: 25px" >
 			<button   type="button" class="btn btn-default"
 			ng-click="customizeDeal=!customizeDeal;">
-				<span class="" ng-show="!customizeDeal">Add/Change Deal</span>
-				<span class="" ng-show="customizeDeal">Edit Calender</span>
+				<span class="" ng-show="!customizeDeal">{{$storage.lan.nameBadge.editDeal}}</span>
+				<span class="" ng-show="customizeDeal">{{$storage.lan.nameBadge.editCal}}</span>
 			</button>
 		</div>
 		<h1 class="text-center">{{$storage.lan.nameBadge.title}}</h1>
