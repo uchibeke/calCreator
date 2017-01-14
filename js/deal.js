@@ -34,7 +34,7 @@ function dealOps($rootScope, $scope, $http, $localStorage, $firebaseObject, $fir
 	var parsedString = urlStrArr[urlStrArr.length - 1];
 	parsedString = decodeURIComponent(parsedString);
 	if (myDeals.$loaded) {
-		$http.get(apiUrl + parsedString + ".json" ).then(function(response) {
+		$http.get(apiUrl + parsedString + ".json").then(function(response) {
 			ss.loadedDeal = response.data;
 			// success callback
 		}, function(response) {
@@ -42,4 +42,10 @@ function dealOps($rootScope, $scope, $http, $localStorage, $firebaseObject, $fir
 			console.log(response.data);
 		});
 	}
+
+	var hostingUrl = "http://calcreator.me/";
+
+	$scope.dealUrl = function() {
+		return hostingUrl + '%23!/d/' + ss.options.BizName + "/";
+	};
 }

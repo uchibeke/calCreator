@@ -13,7 +13,7 @@
 	<div class="text-center month" style="display: inline;float: left;">
 		<h4  ng-attr-style="{{previewStyleInverseBg()}}">{{$storage.lan.nameBadge.getDeal}}</h4>
 		<img alt="Add guest to see barcode" class="img-responsive"
-		src="{{barcodeSrc($storage.guestsList[0].id,'#ffffff','#000000')}}">
+		src="{{barcodeSrc(dealUrl(),'#ffffff','#000000')}}">
 		<span style="font-size: 10pt;" id="calBody" class="text-center">{{$storage.options.pNum}}</span>
 	</div>
 	<div ng-repeat="cal in $storage.options.cals" class="text-left month">
