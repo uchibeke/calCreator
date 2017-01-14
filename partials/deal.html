@@ -1,17 +1,21 @@
 <section class=" text-center animated flip" id="dealPage" >
 	<div class=" col-xs-12 jumbotron" >
 		<div class="text-center row center-block" style="margin-top: 50px" >
-			<p class="text-center" style="position: fixed;top: 20px;width: 100%"> {{$storage.loadedDeal.name}} </p>
-			<p class="text-center"> {{$storage.loadedDeal.description}} </p>
-			<p class="text-center" ng-hide="$storage.loadedDeal.description"> Deal coming soon </p>
+			<p class="text-center" style="position: fixed;top: 20px;width: 100%">
+				{{$storage.options.bizNameFromUrl}}
+			</p>
+			<p class="text-center">
+				{{$storage.loadedDeal.description}}
+			</p>
+			<p class="text-center" ng-hide="$storage.loadedDeal.description">
+				Deal coming soon
+			</p>
 			<h1 class="text-center">{{$storage.loadedDeal.savings}} </h1>
-			<span>
-				{{$storage.loadedDeal.start}} - {{$storage.loadedDeal.end}}
-			</span>
+			<span> {{$storage.loadedDeal.start}} - {{$storage.loadedDeal.end}} </span>
 			<p></p>
 			<span class="glyphicon glyphicon-phone" style="font-size: 40px;"></span>
 			<img class="img-responsive center-block"
-			src="{{barcodeSrc($storage.options.pNum,'#ffffff','#000000')}}">
+			src="{{barcodeSrc($storage.loadedDeal.phone,'#ffffff','#000000')}}">
 			<p></p>
 			<span class="glyphicon glyphicon-earphone" style="font-size: 20px;"></span>
 			<p>

@@ -30,22 +30,25 @@ function dealOps($rootScope, $scope, $http, $localStorage, $firebaseObject, $fir
 		};
 		firebase.database().ref(bizName).set(newDeal);
 	};
-
-	var parsedString = urlStrArr[urlStrArr.length - 1];
-	parsedString = decodeURIComponent(parsedString);
-	if (myDeals.$loaded) {
-		$http.get(apiUrl + parsedString + ".json").then(function(response) {
-			ss.loadedDeal = response.data;
-			// success callback
-		}, function(response) {
-			// failure callback
-			console.log(response.data);
-		});
-	}
+	$scope.dealUrl = function() {
+		return hostingUrl + '%23!/d/' + encodeURIComponent(ss.options.BizName) + "/";
+	};
 
 	var hostingUrl = "http://calcreator.me/";
 
-	$scope.dealUrl = function() {
-		return hostingUrl + '%23!/d/' + ss.options.BizName + "/";
-	};
+	if (urlStrArr[urlStrArr.length - 2] === 'd') {
+		ss.options.bizNameFromUrl = urlStrArr[urlStrArr.length - 1];
+		ss.options.bizNameFromUrl = decodeURIComponent(ss.options.bizNameFromUrl);
+		if (myDeals.$loaded) {
+			$http.get(apiUrl + ss.options.bizNameFromUrl + ".json").then(function(response) {
+				ss.loadedDeal = response.data;
+				// success callback
+			}, function(response) {
+				// failure callback
+				console.log(response.data);
+			});
+		}
+
+		ss.loadedDeal = ss.loadedDeal ? ss.loadedDeal : {};
+	}
 }
