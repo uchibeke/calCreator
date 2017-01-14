@@ -1,8 +1,9 @@
-<section class=" text-center " id="dealPage" >
+<section class=" text-center animated flip" id="dealPage" >
 	<div class=" col-xs-12 jumbotron" >
 		<div class="text-center row center-block" style="margin-top: 50px" >
 			<p class="text-center" style="position: fixed;top: 20px;width: 100%"> {{$storage.loadedDeal.name}} </p>
 			<p class="text-center"> {{$storage.loadedDeal.description}} </p>
+			<p class="text-center" ng-hide="$storage.loadedDeal.description"> Deal coming soon </p>
 			<h1 class="text-center">{{$storage.loadedDeal.savings}} </h1>
 			<span>
 				{{$storage.loadedDeal.start}} - {{$storage.loadedDeal.end}}
@@ -14,7 +15,7 @@
 			<p></p>
 			<span class="glyphicon glyphicon-earphone" style="font-size: 20px;"></span>
 			<p>
-				<a href="tel:+1-800-555-5555" style="color: white !important;">{{$storage.loadedDeal.phone}}</a>
+				<a href="tel:{{$storage.loadedDeal.phone}}" style="color: white !important;">{{$storage.loadedDeal.phone}}</a>
 			</p>
 		</div>
 	</div>

@@ -1,5 +1,5 @@
-<section class="guestinfo  container-fluid animated slideInRight pg" id="badgePage">
-	<div class="hideOnPrint" ng-hide="printSet">
+<section class="guestinfo  container-fluid pg animated pulse" id="badgePage">
+	<div class="hideOnPrint" ng-hide="printSet" style="background: white;">
 		<div class=" center-block row text-center"  style="position: fixed;top: 25px;right: 25px">
 			<button   type="button" class="btn btn-default btn-lg"
 			ng-click="$storage.user.styles.setSelectedInd();printSet=!printSet;">
@@ -13,7 +13,7 @@
 				<span class="" ng-show="customizeDeal">{{$storage.lan.nameBadge.editCal}}</span>
 			</button>
 		</div>
-		<h1 class="text-center">{{$storage.lan.nameBadge.title}}</h1>
+		<h1 class="text-center" style="padding-top: 10px;">{{$storage.lan.nameBadge.title}}</h1>
 		<div class="row   center-block ">
 			<div class="col-sm-2 col-xs-12 pull-left ticketContent">
 				<h3 class="text-center">{{$storage.lan.nameBadge.content}}</h3>
@@ -79,11 +79,11 @@
 							<input class="form-control"  type="text"
 							ng-model="$storage.options.dealEnd">
 						</div>
-						<button ng-click="updateDeal($storage.options.BizName,$storage.options.dealDesc,
+						<a ng-click="updateDeal($storage.options.BizName,$storage.options.dealDesc,
 						$storage.options.dealSavings,$storage.options.dealStart,$storage.options.dealEnd)"
-						class="btn  btn-file btn-default">
+						class="btn  btn-file btn-default"  ng-href="{{'#!/d/' + $storage.options.BizName}}" target="_blank">
 							{{$storage.lan.nameBadge.submitDeal}}
-						</button>
+						</a>
 					</form>
 				</div>
 			</div>
