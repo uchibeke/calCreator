@@ -1,19 +1,21 @@
 <section class=" text-center " id="dealPage" >
 	<div class=" col-xs-12 jumbotron" >
-		<div class="text-center row center-block" style="margin-top: 130px" >
-			<h2 class="text-center" style="position: fixed;top: 0px;width: 100%"> {{$storage.loadedDeal.name}} </h2>
+		<div class="text-center row center-block" style="margin-top: 70px" >
+			<p class="text-center" style="position: fixed;top: 20px;width: 100%"> {{$storage.loadedDeal.name}} </p>
 			<h2 class="text-center"> {{$storage.loadedDeal.description}} </h2>
 			<h1 class="text-center">{{$storage.loadedDeal.savings}} </h1>
-			<p>
+			<span>
 				{{$storage.loadedDeal.start}} - {{$storage.loadedDeal.end}}
-			</p>
-			Scan to Call
+			</span>
+			<p></p>
+			<span class="glyphicon glyphicon-phone" style="font-size: 40px;"></span>
 			<img class="img-responsive center-block"
 			src="{{barcodeSrc($storage.options.pNum,'#ffffff','#000000')}}">
+			<p></p>
+			<span class="glyphicon glyphicon-earphone" style="font-size: 20px;"></span>
 			<p>
 				<a href="tel:+1-800-555-5555" style="color: white !important;">{{$storage.loadedDeal.phone}}</a>
 			</p>
 		</div>
 	</div>
 </section>
-<div ng-include="'partials/lan.html'"></div>

@@ -12,8 +12,6 @@ function dealOps($rootScope, $scope, $http, $localStorage, $firebaseObject, $fir
 
 	ss.deals = myDeals;
 
-	console.log(ss.deals);
-
 	$scope.deleteAllDeals = function() {
 
 	};
@@ -35,12 +33,9 @@ function dealOps($rootScope, $scope, $http, $localStorage, $firebaseObject, $fir
 
 	var parsedString = urlStrArr[urlStrArr.length - 1];
 	parsedString = decodeURIComponent(parsedString);
-	console.log(parsedString);
-	console.log(ss.deals);
 	if (myDeals.$loaded) {
 		$http.get(apiUrl + parsedString + ".json" ).then(function(response) {
 			ss.loadedDeal = response.data;
-			console.log(ss.loadedDeal);
 			// success callback
 		}, function(response) {
 			// failure callback
