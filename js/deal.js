@@ -51,4 +51,18 @@ function dealOps($rootScope, $scope, $http, $localStorage, $firebaseObject, $fir
 
 		ss.loadedDeal = ss.loadedDeal ? ss.loadedDeal : {};
 	}
+
+	function convertImageToBase64(img) {
+		console.log(img);
+		var canvas = document.createElement("canvas");
+		canvas.width = img.width;
+		canvas.height = img.height;
+
+		var ctx = canvas.getContext("2d");
+		ctx.drawImage(img, 0, 0);
+
+		var dataURL = canvas.toDataURL("image/png");
+
+		return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+	}
 }

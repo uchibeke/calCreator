@@ -145,6 +145,8 @@ function($rootScope, $scope, $http, $localStorage, $sce, Upload, $timeout, analy
 
 	calendarOps($rootScope, $scope, $http, $localStorage);
 	dealOps($rootScope, $scope, $http, $localStorage, $firebaseObject, $firebaseArray, $firebaseAuth, $location);
+	var userLang = navigator.language || navigator.userLanguage; 
+	console.log(userLang);
 
 	$rootScope.$storage.en = en;
 	$rootScope.$storage.ch = ch;

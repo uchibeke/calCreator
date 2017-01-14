@@ -269,11 +269,30 @@
 
 #CLogo {
 	height: 0.8in;
-	text-align: center;
-	padding: 0.2in 0in 0.2in 0in !important;
+	text-align: center !important;
 	margin: 0in 0in 0.05in 0in !important;
 }
 
+
+#CLogo #logoDiv1 {
+	width: 2in !important;
+	float: left;
+	
+}
+#CLogo #logoTxt {
+	padding: 0.2in 0in 0.2in 0in !important;
+	width: 4.05in !important;
+	float: left;
+}
+#CLogo #logoDiv2 {
+	width: 2in !important;
+	float: left;
+}
+#CLogo .logo {
+	text-align:center;
+	display:inline-block;
+	max-height: 0.8in;
+}
 .bizName {
 	font-size: 20pt;
 	font-weight: 600px;

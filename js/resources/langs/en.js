@@ -37,7 +37,7 @@ var en = {
 		"cAndI" : "PLEASE PRINT WITH BACKGROUND COLOR AND IMAGES",
 		"dSided" : "Print Double Sided",
 		"sSided" : "Print Single Sided",
-		"select" : "Select a Picture",
+		"select" : "Select Customer's Picture",
 		"getDeal" : "Get Your Deal",
 		"eMsg" : "Enter a personalized message",
 		"eBiz" : "Enter Business detail",

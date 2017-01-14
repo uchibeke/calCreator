@@ -1,11 +1,5 @@
-<section class="guestinfo  container-fluid pg animated pulse" id="badgePage">
+<section class="guestinfo  container-fluid pg animated pulse " ng-class="{'fancgyBg' : showSide}">
 	<div class="hideOnPrint" ng-hide="printSet" style="background: white;">
-		<div class=" center-block row text-center"  style="position: fixed;top: 25px;right: 25px">
-			<button   type="button" class="btn btn-default btn-lg"
-			ng-click="$storage.user.styles.setSelectedInd();printSet=!printSet;">
-				<span class="glyphicon glyphicon-print"></span>
-			</button>
-		</div>
 		<div  style="position: fixed;top: 25px;left: 25px" >
 			<button   type="button" class="btn btn-default"
 			ng-click="customizeDeal=!customizeDeal;">
@@ -19,15 +13,15 @@
 				<h3 class="text-center">{{$storage.lan.nameBadge.content}}</h3>
 				<div ng-show="!customizeDeal"  class="fadein fadeout">
 					<form role="form " id="upldForm">
-						<button ngf-select ng-model="$storage.UpldImgs[0]" accept="image/*"
-						class="btn  btn-file btn-default">
-							{{$storage.lan.nameBadge.select}}
-						</button>
 						<div class="form-group">
 							<label>{{$storage.lan.nameBadge.bizNameInst}}</label>
 							<input class="form-control"  type="text"
 							ng-model="$storage.options.BizName">
 						</div>
+						<button ngf-select ng-model="$storage.companyLogo" accept="image/*"
+						class="btn  btn-file btn-default">
+							Company logo
+						</button>
 						<div class="form-group">
 							<label>{{$storage.lan.nameBadge.eBiz}}</label>
 							<input class="form-control"  type="text"
@@ -38,6 +32,10 @@
 							<input class="form-control"  type="text"
 							ng-model="$storage.options.pNum">
 						</div>
+						<button ngf-select ng-model="$storage.UpldImgs[0]" accept="image/*"
+						class="btn  btn-file btn-default">
+							{{$storage.lan.nameBadge.select}}
+						</button>
 						<div class="form-group">
 							<label>{{$storage.lan.nameBadge.eMsg}}</label>
 							<input class="form-control"  type="text" ng-change="getOnePerline ($storage.options.personalizedMsg)"
@@ -58,6 +56,10 @@
 					</div>
 				</div>
 				<div ng-show="customizeDeal" class="fadein fadeout">
+					<p ng-hide="$storage.options.dealDesc">
+						The deal you add here is what customers see when they scan the qr code in the calender.
+						A unique webpage with your deal will be generated
+					</p>
 					<form role="form ">
 						<div class="form-group">
 							<label>{{$storage.lan.nameBadge.dealDesc}}</label>
@@ -79,11 +81,12 @@
 							<input class="form-control"  type="text"
 							ng-model="$storage.options.dealEnd">
 						</div>
+						<p ng-hide="$storage.options.dealDesc">
+							Clicking submit opens new window with your deal. This is what customers see when they scan the code
+						</p>
 						<a ng-click="updateDeal($storage.options.BizName,$storage.options.dealDesc,
 						$storage.options.dealSavings,$storage.options.dealStart,$storage.options.dealEnd)"
-						class="btn  btn-file btn-default"  ng-href="{{'#!/d/' + $storage.options.BizName}}" target="_blank">
-							{{$storage.lan.nameBadge.submitDeal}}
-						</a>
+						class="btn  btn-file btn-default"  ng-href="{{'#!/d/' + $storage.options.BizName}}" target="_blank"> {{$storage.lan.nameBadge.submitDeal}} </a>
 					</form>
 				</div>
 			</div>
@@ -114,4 +117,22 @@
 		</button>
 	</div>
 </section>
+<div class=" center-block row text-center"  style="position: fixed;top: 25px;right: 25px" ng-hide="printSet">
+	<button   type="button" class="btn btn-default btn-lg"
+	ng-click="$storage.user.styles.setSelectedInd();printSet=!printSet;">
+		<span class="glyphicon glyphicon-print"></span>
+	</button>
+</div>
+<div class="pull-right "   style="position: fixed;top: 25px;right: 25px"  ng-hide="!printSet">
+	<button   type="button" class="btn btn-primary  btn-lg"
+	ng-click="printBadges()">
+		<span class="glyphicon glyphicon-print"></span>
+	</button>
+</div>
+<div style="position:fixed;bottom: 10px;right: 25px" class="fixed-bottom">
+	<button   type="button" class="btn btn-default btn-lg" ng-click="showSide=!showSide">
+		<span class="glyphicon glyphicon-resize-full " ng-show="showSide"></span>
+		<span class="glyphicon glyphicon-resize-small " ng-show="!showSide"></span>
+	</button>
+</div>
 <div ng-include="'partials/lan.html'"></div>
