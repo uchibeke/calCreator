@@ -1,9 +1,6 @@
 <section class=" text-center animated flip" id="dealPage" >
 	<div class=" col-xs-12 jumbotron" >
-		<div class="text-center row center-block" style="margin-top: 30px" >
-			<p class="text-center" style="position: fixed;top: 20px;width: 100%">
-				{{$storage.options.bizNameFromUrl}}
-			</p>
+		<div class="text-center row center-block" style="margin-top: 0px" >
 			<p class="text-center">
 				{{$storage.loadedDeal.description}}
 			</p>
@@ -18,9 +15,13 @@
 			src="{{barcodeSrc($storage.loadedDeal.phone,'#ffffff','#000000')}}">
 			<p></p>
 			<span class="glyphicon glyphicon-earphone" style="font-size: 20px;"></span>
-			<h1 style="margin-top: -10px;">
-				<a href="tel:{{$storage.loadedDeal.phone}}" style="color: white !important;">{{$storage.loadedDeal.phone}}</a>
-			</h1>
+			<h1 style="margin-top: -10px;"><a href="tel:{{$storage.loadedDeal.phone}}" style="color: white !important;">{{$storage.loadedDeal.phone}}</a></h1>
 		</div>
+	</div>
+	<div class="row center-block text-center" style="position: fixed;bottom: 5px;width: 100%">
+		<p >
+			{{$storage.options.bizNameFromUrl}}
+		</p>
+		<img src="{{'data:image\/(png|jpg);base64,' + $storage.loadedDeal.logo}}" width="50px" >
 	</div>
 </section>

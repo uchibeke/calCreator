@@ -18,7 +18,7 @@
 							<input class="form-control"  type="text"
 							ng-model="$storage.options.BizName">
 						</div>
-						<button ngf-select ng-model="$storage.companyLogo" accept="image/*"
+						<button ngf-select="uploadFiles($files, $invalidFiles)"  ng-model="$storage.companyLogo" accept="image/*"
 						class="btn  btn-file btn-default">
 							Company logo
 						</button>
