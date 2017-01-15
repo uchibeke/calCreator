@@ -10,7 +10,7 @@ function dealOps($rootScope, $scope, $http, $localStorage, $firebaseObject, $fir
 
 	var myDeals = $firebaseObject(dealsRef);
 
-	ss.deals = myDeals;
+	$scope.deals = myDeals;
 
 	$scope.deleteAllDeals = function() {
 
@@ -18,7 +18,7 @@ function dealOps($rootScope, $scope, $http, $localStorage, $firebaseObject, $fir
 
 	var apiUrl = "https://calcreator-d490f.firebaseio.com/";
 
-	$scope.updateDeal = function(bizName, dealDescription, savings, dealStart, dealEnd) {
+	$scope.updateDeal = function(dealDescription, savings, dealStart, dealEnd) {
 		var newDeal = {
 			"description" : dealDescription,
 			"savings" : savings,
@@ -26,11 +26,11 @@ function dealOps($rootScope, $scope, $http, $localStorage, $firebaseObject, $fir
 			"end" : dealEnd,
 			"phone" : ss.options.pNum,
 			"name" : ss.options.BizName,
-			"logo" : ss.deals[BizName].logo
+			"logo" : $scope.deals[ss.options.BizName].logo
 		};
-		firebase.database().ref(bizName).set(newDeal);
+		firebase.database().ref(ss.options.BizName).set(newDeal);
 	};
-	
+
 	$scope.dealUrl = function() {
 		return hostingUrl + '%23!/d/' + encodeURIComponent(ss.options.BizName) + "/";
 	};
@@ -43,7 +43,7 @@ function dealOps($rootScope, $scope, $http, $localStorage, $firebaseObject, $fir
 	if (urlStrArr[urlStrArr.length - 1] === 'design') {
 		if (myDeals.$loaded) {
 			$http.get(apiUrl + nameToUse + ".json").then(function(response) {
-				ss.loadedDeal = response.data;
+				$scope.loadedDeal = response.data;
 				// success callback
 			}, function(response) {
 				// failure callback
@@ -54,7 +54,7 @@ function dealOps($rootScope, $scope, $http, $localStorage, $firebaseObject, $fir
 		nameToUse = urlStrArr[urlStrArr.length - 1];
 		if (myDeals.$loaded) {
 			$http.get(apiUrl + nameToUse + ".json").then(function(response) {
-				ss.loadedDeal = response.data;
+				$scope.loadedDeal = response.data;
 				// success callback
 			}, function(response) {
 				// failure callback
@@ -63,7 +63,7 @@ function dealOps($rootScope, $scope, $http, $localStorage, $firebaseObject, $fir
 		}
 	}
 
-	ss.loadedDeal = ss.loadedDeal ? ss.loadedDeal : {};
+	$scope.loadedDeal = $scope.loadedDeal ? $scope.loadedDeal : {};
 
 	$scope.uploadFiles = function(files, errFiles) {
 		$scope.files = files;
