@@ -2,20 +2,20 @@
 	<div id="pSpace1" ng-attr-style="{{previewStyle()}}">
 		<div id="CLogo" ng-attr-style="{{previewStyleInverse()}}">
 			<div id="logoDiv1">
-				<img src="{{'data:image\/(png|jpg);base64,' + deals[$storage.options.BizName].logo}}"  class="logo" />
+				<img src="{{'data:image\/(png|jpg);base64,' + deals[$storage.options.BizName].logo}}"  class="logo pull-left" />
 			</div >
 			<div id="logoTxt">
 				<span class="bizName " ng-attr-style="{{previewStyleInverse()}}">{{$storage.options.BizName}}</span>
 			</div>
 			<div id="logoDiv2">
-				<img src="{{'data:image\/(png|jpg);base64,' + deals[$storage.options.BizName].logo}}"  class="logo" />
+				<img src="{{'data:image\/(png|jpg);base64,' + deals[$storage.options.BizName].logo}}"  class="logo pull-right" />
 			</div >
 		</div>
-		<div id="leftSide">
+		<!-- <div id="leftSide">
 			<p class="pull-left text-center" id="personalizecMsg"  ng-repeat="str in $storage.userMsg">
 				<span ng-bind-html="str"  ng-attr-style="{{previewStyle()}}"></span>
 			</p>
-		</div>
+		</div> -->
 		<div id="imgDiv" ng-attr-style="{{previewStyle()}}">
 			<img ngf-src="$storage.UpldImgs[0]" class="img-responsive text-center"></img>
 		</div>
@@ -34,3 +34,4 @@
 		<p ng-bind-html="dispCal(cal.month, cal.year)" id="calBody"></p>
 	</div>
 </div>
+

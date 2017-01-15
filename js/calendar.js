@@ -36,7 +36,7 @@ function calendarOps($rootScope, $scope, $http, $localStorage) {
 	}
 	
 	ss.user.styles.badgeFormats = {
-		'formats' : ['partials/badges/b1.html', 'partials/badges/b2.html', 'partials/badges/b3.html', 'partials/badges/b4.html']
+		'formats' : ['partials/badges/b3.html', 'partials/badges/b2.html', 'partials/badges/b1.html', 'partials/badges/b4.html', 'partials/badges/b5.html']
 	};
 	
 	
@@ -61,6 +61,7 @@ function calendarOps($rootScope, $scope, $http, $localStorage) {
 		var firstOfMonth = new Date(year, month, 1);
 		var startingPos = firstOfMonth.getDay();
 		days += startingPos;
+		
 		// var toOutPut =  "<span class='calHeader'>" + "<span class='dItem'>" + "Su" +  "</span>" + 
 		// "<span class='dItem'>" + "Mo" +  "</span>" + 
 		// "<span class='dItem'>" + "Tu" +  "</span>" + 
@@ -68,7 +69,8 @@ function calendarOps($rootScope, $scope, $http, $localStorage) {
 		// "<span class='dItem'>" + "Th" +  "</span>" + 
 		// "<span class='dItem'>" + "Fr" +  "</span>" +
 		// "<span class='dItem'>" + "Sa" +  "</span>"  +  "</span>" ;
-		var toOutPut =  "<span class='calHeader'>" + "<span class='dItem'>" + "日" +  "</span>" + 
+		
+		var toOutPut =  "<span class='calHeader'>" + "<span class='dItem sunday'>" + "日" +  "</span>" + 
 		"<span class='dItem'>" + "一" +  "</span>" + 
 		"<span class='dItem'>" + "二" +  "</span>" + 
 		"<span class='dItem'>" + "三" +  "</span>" + 

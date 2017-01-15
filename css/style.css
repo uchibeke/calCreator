@@ -435,7 +435,18 @@ a {
 	height: auto;
 	background-size: cover;
 }
-
+#loadingCover {
+	color:white !important;
+	position: fixed;
+	top: 0;
+	left: 0;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	background-size: cover;
+	background: white;
+}
 
 #dealPage .jumbotron {
 	background-color:inherit !important;

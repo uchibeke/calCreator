@@ -1,4 +1,4 @@
-<section class="guestinfo  container-fluid pg animated pulse " ng-class="{'fancgyBg' : showSide}"  ng-show='deals["$resolved"]'>
+<section class="guestinfo  container-fluid pg animated pulse " ng-class="{'fancgyBg' : showSide}"  >
 	<div class="hideOnPrint" ng-hide="printSet" style="background: white;">
 		<div  style="position: fixed;top: 25px;left: 25px" >
 			<button   type="button" class="btn btn-default"
@@ -144,8 +144,8 @@
 		<span class="glyphicon glyphicon-resize-small " ng-show="!showSide"></span>
 	</button>
 </div>
-<div class="row text-center" ng-hide='deals["$resolved"]' style="position:fixed;bottom: 40%;width: 100%;">
-	<img class="img-responsive center-block" src="images/box.gif" />
+<div class="row text-center" ng-hide='deals["$resolved"]' id="loadingCover">
+	<img class="img-responsive center-block" src="images/box.gif" style="margin-top: 20%;" />
 </div>
 <div ng-include="'partials/lan.html'"></div>
-<img ngf-src="$storage.companyLogo"  class="logo" ng-hide="true" />
+<img ngf-src="$storage.companyLogo"  class="logo center-block" ng-hide="true" style="max-width: 100px"/>

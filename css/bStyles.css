@@ -188,22 +188,34 @@
 	background: white;
 }
 
-#gift1 h4, #gift3 h4, #gift4 h4 {
+#gift1 h4 {
+	border-top: 3px dotted #EEEEEE;
+	box-shadow: inset 0 -1px 0 0 #EEEEEE, inset 0 1px 0 0 #EEEEEE, 0 1px 0 0 #EEEEEE, 0 -1px 0 0 #EEEEEE;
+}
+
+#gift2 h4 {
+	border: 1px dashed #ddd;
+	box-shadow: 0 0 0 3px #fff, 0 0 0 5px #ddd, 0 0 0 10px #fff, 0 0 2px 10px #eee;
+}
+
+#gift3 h4 {
+	border-top: 7px dotted #EEEEEE !important;
+	box-shadow: inset 0 3px 0 0 #EEEEEE, 0 -3px 0 0 #EEEEEE !important;
+}
+
+#gift4 h4 {
 	border: 1px solid white;
 	border-top-left-radius: 0.5in;
 	border-top-right-radius: 0.5in;
+	border-top: 7px dotted #EEEEEE !important;
+	box-shadow: inset 0 3px 0 0 #EEEEEE, 0 -3px 0 0 #EEEEEE !important;
 }
 
 #gift2 h4 {
 	/*border: 1px solid white;
 	 /*border-bottom-left-radius: 0.5in;
-	 border-bottom-right-radius: 0.5in;*/*/
+	 border-bottom-right-radius: 0.5in;*/
 }
-
-/*#gift3 {
- background: url('../images/bgs/yellowBg.jpg');
- background-size: cover;
- }*/
 /*
  #gift3 * {
  inherit: !important;
@@ -232,6 +244,7 @@
 	position: relative;
 	display: inline-block !important;
 	padding: 0px 0px 0px 0in !important;
+	margin-bottom: -5px !important;
 	width: 1.642in;
 	height: 1.75in !important;
 	text-align: center;
@@ -242,7 +255,6 @@
 	vertical-align: top;
 	background: white !important;
 }
-
 #calBody {
 	padding: 0px 0px 0px 0.1in !important;
 	color: black !important;
@@ -252,6 +264,13 @@
 .calHeader {
 	color: inherit !important;
 	font-weight: bolder;
+}
+
+.calHeader .dItem {
+	color: red !important;
+}
+.calHeader .sunday {
+	color: #1164B4 !important;
 }
 
 /*g1*/
@@ -272,11 +291,9 @@
 	margin: 0in 0in 0.05in 0in !important;
 }
 
-
 #CLogo #logoDiv1 {
 	width: 2in !important;
 	float: left;
-	
 }
 #CLogo #logoTxt {
 	padding: 0.2in 0in 0.2in 0in !important;
@@ -288,8 +305,8 @@
 	float: left;
 }
 #CLogo .logo {
-	text-align:center;
-	display:inline-block;
+	text-align: center;
+	display: inline-block;
 	max-height: 0.8in;
 }
 .bizName {
@@ -361,31 +378,22 @@
 	padding: 0.1in 10px 0.1in 10px !important;
 	margin: 0in 0in 0in 0in !important;
 	height: 0.45in;
-	/*border-bottom-left-radius: 0.3in;
-	 border-bottom-right-radius: 0.3in;*/
-	border-radius: 25%;
+	/*border-radius: 25%;*/
 	font-size: 13pt;
 }
 
-#gift4 #bottomOfSection {
-	border-radius: 0in;
-	border-bottom-left-radius: 25%;
-	border-bottom-right-radius: 25%;
+#gift2 #imgDiv img {
+	border-radius: 100%;
+}
+
+#gift3 #imgDiv img {
+	border-radius: 10px/20px;
 }
 
 #gift4 #imgDiv img {
 	border-radius: 0in;
 	border-top-left-radius: 25%;
 	border-top-right-radius: 25%;
-}
-
-#gift2 #bottomOfSection {
-	text-align: center;
-	padding: 0.1in 10px 0.1in 10px !important;
-	margin: 0.2in 0in 0.2in 0in !important;
-	height: 0.45in;
-	border-radius: 25%;
-	font-size: 13pt;
 }
 
 #bottomOfSection h4 {

@@ -1,4 +1,4 @@
-<div id="gift2" class="gift">
+<div id="gift3" class="gift">
 	<div class="text-center month" style="display: inline;float: left;">
 		<h4  ng-attr-style="{{previewStyleInverseBg()}}">{{$storage.lan.nameBadge.getDeal}}</h4>
 		<img alt="Add guest to see barcode" class="img-responsive"
@@ -10,17 +10,6 @@
 		<p ng-bind-html="dispCal(cal.month, cal.year)" id="calBody"></p>
 	</div>
 	<div id="pSpace1" ng-attr-style="{{previewStyle()}}">
-		<div id="bottomOfSection"  ng-attr-style="{{previewStyleInverse()}}">
-			{{ $storage.options.bizDets | limitTo: 42 }}{{$storage.options.bizDets.length > 50 ? '...' : ''}}
-		</div>
-		<!-- <div id="leftSide">
-			<p class="pull-left text-center" id="personalizecMsg"  ng-repeat="str in $storage.userMsg">
-				<span ng-bind-html="str"  ng-attr-style="{{previewStyle()}}"></span>
-			</p>
-		</div> -->
-		<div id="imgDiv" ng-attr-style="{{previewStyle()}}">
-			<img ngf-src="$storage.UpldImgs[0]" class="img-responsive text-center"></img>
-		</div>
 		<div id="CLogo" ng-attr-style="{{previewStyleInverse()}}">
 			<div id="logoDiv1">
 				<img src="{{'data:image\/(png|jpg);base64,' + deals[$storage.options.BizName].logo}}"  class="logo pull-left" />
@@ -31,6 +20,12 @@
 			<div id="logoDiv2">
 				<img src="{{'data:image\/(png|jpg);base64,' + deals[$storage.options.BizName].logo}}"  class="logo pull-right" />
 			</div >
+		</div>
+		<div id="bottomOfSection"  ng-attr-style="{{previewStyle()}}">
+			{{ $storage.options.bizDets | limitTo: 42 }}{{$storage.options.bizDets.length > 50 ? '...' : ''}}
+		</div>
+		<div id="imgDiv" ng-attr-style="{{previewStyle()}}">
+			<img ngf-src="$storage.UpldImgs[0]" class="img-responsive text-center"></img>
 		</div>
 	</div>
 </div>
