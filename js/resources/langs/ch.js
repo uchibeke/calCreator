@@ -51,6 +51,11 @@ var ch = {
 		"dealSavings" : "多少储蓄/他们会得到什么",
 		"dealStart" : "促销开始",
 		"dealEnd" : "促销结束",
-		"submitDeal" : "添加促销"
+		"submitDeal" : "添加促销",
+
+		"selectLogo" : "上传标志",
+		"dealAddUp" : "您在此处添加的促销是客户在日历中扫描qr代码时看到的。将为您的促销活动创建一个新网站",
+		"dealAddDown" : "点击提交将打开一个新窗口和您的促销。这是客户在扫描代码时看到的",
+		"comingSoon" : "促销即将推出"
 	}
 };

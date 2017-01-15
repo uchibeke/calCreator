@@ -51,6 +51,11 @@ var en = {
 		"dealSavings" : "How much savings/What will they get",
 		"dealStart" : "Start Date",
 		"dealEnd" : "End Date",
-		"submitDeal" : "Submit Deal"
+		"submitDeal" : "Submit Deal",
+
+		"selectLogo" : "Upload Logo",
+		"dealAddUp" : "The deal you add here is what customers see when they scan the qr code in the calendar. A unique web page with your deal will be generated",
+		"dealAddDown" : "Clicking submit opens new window with your deal. This is what customers see when they scan the code",
+		"comingSoon" : "Deal coming soon"
 	}
-}; 
+};

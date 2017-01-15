@@ -20,7 +20,7 @@
 						</div>
 						<button ngf-select="uploadFiles($files, $invalidFiles)"  ng-model="$storage.companyLogo" accept="image/*"
 						class="btn  btn-file btn-default">
-							Company logo
+							{{$storage.lan.nameBadge.selectLogo}}
 						</button>
 						<div class="form-group">
 							<label>{{$storage.lan.nameBadge.eBiz}}</label>
@@ -56,11 +56,10 @@
 					</div>
 				</div>
 				<div ng-show="customizeDeal" class="fadein fadeout">
-					<p ng-hide="$storage.options.dealDesc">
-						The deal you add here is what customers see when they scan the qr code in the calender.
-						A unique webpage with your deal will be generated
-					</p>
 					<form role="form ">
+						<p ng-hide="$storage.options.dealDesc">
+							{{$storage.lan.nameBadge.dealAddUp}}
+						</p>
 						<div class="form-group">
 							<label>{{$storage.lan.nameBadge.bizNameInst}}</label>
 							<input class="form-control"  type="text"
@@ -87,7 +86,7 @@
 							ng-model="$storage.options.dealEnd">
 						</div>
 						<p ng-hide="$storage.options.dealDesc">
-							Clicking submit opens new window with your deal. This is what customers see when they scan the code
+							{{$storage.lan.nameBadge.dealAddDown}}
 						</p>
 						<a ng-click="updateDeal($storage.options.BizName,$storage.options.dealDesc,
 						$storage.options.dealSavings,$storage.options.dealStart,$storage.options.dealEnd)"
