@@ -7,26 +7,6 @@ var en = {
 		"logInInfo" : "Login to get started ",
 		"logIn" : "Logout"
 	},
-	"dashboard" : {
-		"summary" : "Summary and Stats",
-		"dTicket" : " Design Ticket",
-		"dBadge" : "Design Namebadge",
-		"welcome" : "Welcome to your dashboard. Add an event to get started",
-		"start" : "Login to get started ",
-		"status" : "No Show"
-	},
-	"live" : {
-		"cInst" : "On next page, enter a ticket number or name and click check in.",
-		"newGQ" : " Would you want to add new people to the list during checkin?",
-		"yes" : "Yes",
-		"no" : "No",
-		"src" : "Search to checkin",
-		"type" : "Please, start typing",
-		"cIn" : "Check-In",
-		"status" : "Not Checked In",
-		"aNew" : "Add New Name and Checkin",
-		"aAndC" : "Add and Check in"
-	},
 	"nameBadge" : {
 		"title" : "CALENDAR DESIGNER",
 		"content" : "Content",
@@ -38,7 +18,7 @@ var en = {
 		"dSided" : "Print Double Sided",
 		"sSided" : "Print Single Sided",
 		"select" : "Select Customer's Picture",
-		"getDeal" : "Get Your Deal",
+		"getDeal" : "Scan For Deal",
 		"eMsg" : "Enter a personalized message",
 		"eBiz" : "Enter Business detail",
 		"genAt" : "badges designed and generated at",
@@ -52,7 +32,6 @@ var en = {
 		"dealStart" : "Start Date",
 		"dealEnd" : "End Date",
 		"submitDeal" : "Submit Deal",
-
 		"selectLogo" : "Upload Logo",
 		"dealAddUp" : "The deal you add here is what customers see when they scan the qr code in the calendar. A unique web page with your deal will be generated",
 		"dealAddDown" : "Clicking submit opens new window with your deal. This is what customers see when they scan the code",

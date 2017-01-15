@@ -11,8 +11,8 @@
 			<span> {{loadedDeal.start}} - {{loadedDeal.end}} </span>
 			<p></p>
 			<span class="glyphicon glyphicon-phone" style="font-size: 40px;"></span>
-			<img class="img-responsive center-block" ng-show="loadedDeal.description"
-			src="{{barcodeSrc(loadedDeal.phone,'#ffffff','#000000')}}">
+			<a href="tel:{{loadedDeal.phone}}" style="color: white !important;"><img class="img-responsive center-block" ng-show="loadedDeal.description"
+			src="{{barcodeSrc(loadedDeal.phone,'#ffffff','#000000')}}"></a>
 			<img class="img-responsive center-block" ng-hide="loadedDeal.description"
 			src="{{barcodeSrc('http://www.calcreator.me','#ffffff','#000000')}}">
 			<p></p>

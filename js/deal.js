@@ -40,7 +40,7 @@ function dealOps($rootScope, $scope, $http, $localStorage, $firebaseObject, $fir
 	ss.options.bizNameFromUrl = urlStrArr[urlStrArr.length - 1];
 	ss.options.bizNameFromUrl = decodeURIComponent(ss.options.bizNameFromUrl);
 	var nameToUse = ss.options.BizName;
-	if (urlStrArr[urlStrArr.length - 1] === 'design') {
+	if (urlStrArr[urlStrArr.length - 1] === 'make') {
 		if (myDeals.$loaded) {
 			$http.get(apiUrl + nameToUse + ".json").then(function(response) {
 				$scope.loadedDeal = response.data;
@@ -65,14 +65,9 @@ function dealOps($rootScope, $scope, $http, $localStorage, $firebaseObject, $fir
 
 	$scope.loadedDeal = $scope.loadedDeal ? $scope.loadedDeal : {};
 
-	$scope.uploadFiles = function(files, errFiles) {
-		$scope.files = files;
-		$scope.errFiles = errFiles;
-		console.log($scope.files);
-		console.log($scope.errFiles);
-
+	$scope.uploadFiles = function(file, errFiles) {
 		window.setTimeout(function() {
-			var url = files[0]["$ngfBlobUrl"];
+			var url = file["$ngfBlobUrl"];
 			console.log(url);
 
 			var img = new Image();
@@ -92,7 +87,7 @@ function dealOps($rootScope, $scope, $http, $localStorage, $firebaseObject, $fir
 				firebase.database().ref(ss.options.BizName + "/logo").set(cleaned);
 			};
 			img.src = url;
-		}, 1000);
+		}, 2000);
 	};
 
 }

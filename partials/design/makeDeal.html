@@ -18,7 +18,7 @@
 							<input class="form-control"  type="text"
 							ng-model="$storage.options.BizName">
 						</div>
-						<button ngf-select="uploadFiles($files, $invalidFiles)"  ng-model="$storage.companyLogo" accept="image/*"
+						<button ngf-select="uploadFiles($file, $invalidFiles)"  ng-model="$storage.companyLogo" accept="image/*"
 						class="btn  btn-file btn-default">
 							{{$storage.lan.nameBadge.selectLogo}}
 						</button>
@@ -64,6 +64,11 @@
 							<label>{{$storage.lan.nameBadge.bizNameInst}}</label>
 							<input class="form-control"  type="text"
 							ng-model="$storage.options.BizName">
+						</div>
+						<div class="form-group">
+							<label>{{$storage.lan.nameBadge.pNum}}</label>
+							<input class="form-control"  type="text"
+							ng-model="$storage.options.pNum">
 						</div>
 						<div class="form-group">
 							<label>{{$storage.lan.nameBadge.dealDesc}}</label>
@@ -133,7 +138,7 @@
 		<span class="glyphicon glyphicon-print"></span>
 	</button>
 </div>
-<div style="position:fixed;bottom: 10px;right: 25px" class="fixed-bottom">
+<div style="position:fixed;bottom: 10px;right: 25px" class="fixed-bottom" ng-show='deals["$resolved"]'>
 	<button   type="button" class="btn btn-default btn-lg" ng-click="showSide=!showSide">
 		<span class="glyphicon glyphicon-resize-full " ng-show="showSide"></span>
 		<span class="glyphicon glyphicon-resize-small " ng-show="!showSide"></span>
@@ -143,3 +148,4 @@
 	<img class="img-responsive center-block" src="images/box.gif" />
 </div>
 <div ng-include="'partials/lan.html'"></div>
+<img ngf-src="$storage.companyLogo"  class="logo" ng-hide="true" />

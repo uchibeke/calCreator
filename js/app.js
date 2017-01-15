@@ -2,8 +2,8 @@ var myApp = angular.module('myApp', ['ngRoute', 'mainControllers', 'ticketContro
 
 myApp.config(['$routeProvider',
 function($routeProvider) {
-	$routeProvider.when('/design', {
-		templateUrl : 'partials/design/makeNameBadge.html',
+	$routeProvider.when('/make', {
+		templateUrl : 'partials/design/makeDeal.html',
 		controller : 'TicketController'
 	}).when('', {
 		templateUrl : 'partials/home.html',
@@ -18,7 +18,7 @@ function($routeProvider) {
 		templateUrl : 'partials/deal.html',
 		controller : 'TicketController'
 	}).otherwise({
-		redirectTo : '/design'
+		redirectTo : '/make'
 	});
 }]);
 // Condition base:

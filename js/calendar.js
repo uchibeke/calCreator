@@ -10,18 +10,16 @@ function calendarOps($rootScope, $scope, $http, $localStorage) {
 		var popupWin = window.open('', '_blank', 'width=1700,height=2200');
 		popupWin.document.open();
 		var top = `
-		<html>
+		<html lang="en" >
 			<head>
+				<meta charset="UTF-8">
+				<meta name="viewport" content="width=device-width, initial-scale=1">
 				<link rel="stylesheet" media="all"  href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed">
 				<link rel="stylesheet" media="all" href="css/style.css">
 				<link rel="stylesheet" media="all" href="css/bStyles.css">
 				<link rel="stylesheet" media="all" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
 			</head>
-			<body onload="window.print()" 
-			style="print-color-adjust: exact !important;
-			-moz-print-color-adjust: exact !important;
-			-webkit-print-color-adjust: exact !important;
-			font-family: "Roboto Condensed",  monospace, sans-serif !important;">`;
+			<body onload="window.print()" >`;
 		
 		var bottom = `
 			</body>
@@ -33,9 +31,8 @@ function calendarOps($rootScope, $scope, $http, $localStorage) {
 	
 	
 	
-	if (ss.user.styles.selectedBFormat == undefined && ss.user.styles.selectedBFormatPre == undefined) {
+	if (ss.user.styles.selectedBFormat == undefined) {
 		ss.user.styles.selectedBFormat = 'partials/badges/b1.html';
-		ss.user.styles.selectedBFormatPre = 'partials/badges/b1Preview.html';
 	}
 	
 	ss.user.styles.badgeFormats = {
