@@ -57,9 +57,7 @@ function dealOps($rootScope, $scope, $http, $localStorage, $firebaseObject, $fir
 		nameToUse = urlStrArr[urlStrArr.length - 1];
 		if (myDeals.$loaded) {
 			$http.get(apiUrl + nameToUse + ".json").then(function(response) {
-				var gal = $scope.loadedDeal.gal;
 				$scope.loadedDeal = response.data;
-				$scope.loadedDeal.gal = gal;
 				// success callback
 			}, function(response) {
 				// failure callback
