@@ -49,12 +49,10 @@ function dealOps($rootScope, $scope, $http, $localStorage, $firebaseObject, $fir
 			$scope.loadedDeal = lDeals;
 
 			$scope.loadedDeal = $scope.loadedDeal ? $scope.loadedDeal : {};
-			console.log($scope.loadedDeal);
 		} else {
 			$scope.loadedDeal = $scope.loadedDeal ? $scope.loadedDeal : {};
 			$scope.loadedDeal["$resolved"] = true;
 		}
-		console.log($scope.loadedDeal);
 	} else {
 		nameToUse = urlStrArr[urlStrArr.length - 1];
 		if (myDeals.$loaded) {
@@ -66,7 +64,6 @@ function dealOps($rootScope, $scope, $http, $localStorage, $firebaseObject, $fir
 				console.log(response.data);
 			});
 		}
-		console.log($scope.loadedDeal);
 	}
 
 	$scope.uploadFiles = function(file, errFiles) {
@@ -89,6 +86,9 @@ function dealOps($rootScope, $scope, $http, $localStorage, $firebaseObject, $fir
 				var dataURL = canvas.toDataURL("image/png");
 				var cleaned = dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
 				firebase.database().ref(ss.options.BizName + "/logo").set(cleaned);
+				var lRef = firebase.database().ref(ss.options.BizName);
+				var lDeals = $firebaseObject(lRef);
+				$scope.loadedDeal = lDeals;
 			};
 			img.src = url;
 		}, 2000);
