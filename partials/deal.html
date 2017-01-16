@@ -29,7 +29,8 @@
 		<div class="row-fluid center-block" >
 			<div class="col-xs-12 center-block" id="gal-container">
 				<div class="gallery-container center-block" id="galDiv">
-					<img src="{{'data:image\/(png|jpg);base64,' + loadedDeal.logo}}" class="gallery-item" style="height:250px;" >
+					<img src="images/ball.gif"  style="height:50px;margin: 100px"  ng-hide='loadedDeal.gal'/>
+					<img src="{{'data:image\/(png|jpg);base64,' + loadedDeal.logo}}" class="gallery-item" style="height:250px;"   ng-show='loadedDeal.logo'>
 					<img ng-repeat="image in loadedDeal.gal" src="{{'data:image\/(png|jpg);base64,' + image}}"  ng-show="image"  class="gallery-item" style="height:250px;" />
 				</div>
 			</div>
