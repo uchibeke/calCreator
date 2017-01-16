@@ -267,7 +267,7 @@
 }
 #calBody {
 	padding: 0px 0px 0px 0.1in !important;
-	color: black !important;
+	color: #333333  !important;
 	background: white !important;
 }
 
@@ -279,7 +279,11 @@
 	color: #F50632 !important;
 }
 .calHeader .sunday {
-	color: #1164B4 !important;
+	color: #ffa642 !important;
+}
+
+.sunday {
+	color: #ffa642 !important;
 }
 
 /*g1*/

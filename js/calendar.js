@@ -77,20 +77,25 @@ function calendarOps($rootScope, $scope, $http, $localStorage) {
 		"<span class='dItem'>" + "三" +  "</span>" + 
 		"<span class='dItem'>" + "四" +  "</span>" + 
 		"<span class='dItem'>" + "五" +  "</span>" +
-		"<span class='dItem'>" + "六" +  "</span>"  +  "</span>" ;
+		"<span class='dItem sunday'>" + "六" +  "</span>"  +  "</span>" ;
 		// toOutPut +=  "</br>" ;
 		for ( i = 0; i < startingPos; i++) {
-			if (i % 7 == 0)
-				toOutPut += "</br>";
-			toOutPut += "<span class='dItem'>" + "||||" +  "</span>";
+			if (i % 7 == 0) {
+				toOutPut +=  "</br>";
+				toOutPut += "<span class='dItem sunday'>" + "||||" +  "</span>";
+			} else {
+				toOutPut += "<span class='dItem'>" + "||||" +  "</span>";
+			}
 		}
 		for ( i = startingPos; i < days; i++) {
-			if (i % 7 == 0)
-				toOutPut +=  "</br>";
 			var item = i - startingPos + 1;
 			item = ("0" + item).slice(-2);
-			toOutPut += "<span class='dItem'>" + item +  "</span>";
-			// toOutPut += space;
+			if (i % 7 == 0) {
+				toOutPut +=  "</br>";
+				toOutPut += "<span class='dItem sunday'>" + item +  "</span>";
+			} else {
+				toOutPut += "<span class='dItem'>" + item +  "</span>";
+			}
 		}
 		for ( i = days; i < 42; i++) {
 			if (i % 7 == 0)
@@ -172,6 +177,12 @@ function calendarOps($rootScope, $scope, $http, $localStorage) {
 	
 	
 	$scope.$storage.defaultColors = [{
+			"bg" : "#F2DB79",
+			"txt" : "#8E2321"
+		},{
+			"bg" : "#F2B46E",
+			"txt" : "#8E2321"
+		},{
 			"bg" : "#F50632",
 			"txt" : "#F6BC5F"
 		},{

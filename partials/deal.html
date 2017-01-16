@@ -11,7 +11,7 @@
 			<p class="text-center" ng-hide="loadedDeal.description">
 				{{$storage.lan.nameBadge.comingSoon}}
 			</p>
-			<h1 class="text-center">{{loadedDeal.savings}} </h1>
+			<h1 class="text-center" style="margin-top: -20px;">{{loadedDeal.savings}} </h1>
 			<span> {{loadedDeal.start}} - {{loadedDeal.end}} </span>
 			<p></p>
 			<!-- <span class="glyphicon glyphicon-phone" style="font-size: 40px;"></span> -->
@@ -20,7 +20,7 @@
 			<img class="img-responsive center-block" ng-hide="loadedDeal.description"
 			src="{{barcodeSrc('http://www.calcreator.me','#ffffff','#000000')}}">
 			<p></p>
-			<span class="glyphicon glyphicon-earphone" style="font-size: 30px;"></span>
+			<span class="glyphicon glyphicon-earphone" style="font-size: 30px;margin-top: -15px;"></span>
 			<h2 style="margin-top: -5px;"><a href="tel:{{loadedDeal.phone}}" style="color: white !important;">{{loadedDeal.phone}}</a></h2>
 		</div>
 	</div>
@@ -30,8 +30,8 @@
 			<div class="col-xs-12 center-block" id="gal-container">
 				<div class="gallery-container center-block" id="galDiv">
 					<img src="images/ball.gif"  style="height:50px;margin: 100px"  ng-hide='loadedDeal.gal'/>
-					<img src="{{'data:image\/(png|jpg);base64,' + loadedDeal.logo}}" class="gallery-item" style="height:250px;"   ng-show='loadedDeal.logo'>
-					<img ng-repeat="image in loadedDeal.gal" src="{{'data:image\/(png|jpg);base64,' + image}}"  ng-show="image"  class="gallery-item" style="height:250px;" />
+					<img src="{{'data:image\/(png|jpg);base64,' + loadedDeal.logo}}" class="gallery-item" style="height:200px;"   ng-show='loadedDeal.logo'>
+					<img ng-repeat="image in loadedDeal.gal" src="{{'data:image\/(png|jpg);base64,' + image}}"  ng-show="image"  class="gallery-item" style="height:200px;" />
 				</div>
 			</div>
 		</div>
