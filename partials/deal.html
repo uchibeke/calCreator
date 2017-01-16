@@ -1,27 +1,24 @@
 <section class=" text-center animated flip" id="dealPage" >
 	<div class=" col-xs-12 jumbotron" >
-		<div class="text-center row center-block" style="margin-top: -25px" >
+		<div class="text-center row center-block" style="margin-top: -30px" >
 			<img src="{{'data:image\/(png|jpg);base64,' + loadedDeal.logo}}" width="50px" >
 			<p >
 				{{$storage.options.bizNameFromUrl}}
 			</p>
-			<p class="text-center">
+			<p class="text-center"  style="margin-top: -20px;">
 				{{loadedDeal.description}}
 			</p>
 			<p class="text-center" ng-hide="loadedDeal.description">
 				{{$storage.lan.nameBadge.comingSoon}}
 			</p>
-			<h1 class="text-center" style="margin-top: -20px;">{{loadedDeal.savings}} </h1>
+			<h2 class="text-center" style="margin-top: -20px;">{{loadedDeal.savings}} </h2>
 			<span> {{loadedDeal.start}} - {{loadedDeal.end}} </span>
 			<p></p>
-			<!-- <span class="glyphicon glyphicon-phone" style="font-size: 40px;"></span> -->
-			<!-- <a href="tel:{{loadedDeal.phone}}" style="color: white !important;"><img class="img-responsive center-block" ng-show="loadedDeal.description"
-			src="{{barcodeSrc(loadedDeal.phone,'#ffffff','#000000')}}"></a> -->
 			<img class="img-responsive center-block" ng-hide="loadedDeal.description"
 			src="{{barcodeSrc('http://www.calcreator.me','#ffffff','#000000')}}">
 			<p></p>
 			<span class="glyphicon glyphicon-earphone" style="font-size: 30px;margin-top: -15px;"></span>
-			<h2 style="margin-top: -5px;"><a href="tel:{{loadedDeal.phone}}" style="color: white !important;">{{loadedDeal.phone}}</a></h2>
+			<h3 style="margin-top: -5px;"><a href="tel:{{loadedDeal.phone}}" style="color: white !important;">{{loadedDeal.phone}}</a></h3>
 		</div>
 	</div>
 	<div class="row center-block text-center" style="position: fixed;bottom: 0px;width: 100%">
