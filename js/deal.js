@@ -26,7 +26,7 @@ function dealOps($rootScope, $scope, $http, $localStorage, $firebaseObject, $fir
 			"end" : dealEnd,
 			"phone" : ss.options.pNum,
 			"name" : ss.options.BizName,
-			"logo" : ss.companyLogo
+			"logo" : $scope.loadedDeal.logo ? $scope.loadedDeal.logo : "-"
 		};
 		firebase.database().ref(ss.options.BizName).set(newDeal);
 	};
@@ -41,15 +41,20 @@ function dealOps($rootScope, $scope, $http, $localStorage, $firebaseObject, $fir
 	ss.options.bizNameFromUrl = decodeURIComponent(ss.options.bizNameFromUrl);
 	var nameToUse = ss.options.BizName;
 	if (urlStrArr[urlStrArr.length - 1] === 'make') {
-		if (myDeals.$loaded) {
-			$http.get(apiUrl + nameToUse + ".json").then(function(response) {
-				$scope.loadedDeal = response.data;
-				// success callback
-			}, function(response) {
-				// failure callback
-				console.log(response.data);
-			});
+		if (myDeals.$loaded && ss.options.BizName) {
+			var lRef = firebase.database().ref(ss.options.BizName);
+
+			var lDeals = $firebaseObject(lRef);
+
+			$scope.loadedDeal = lDeals;
+
+			$scope.loadedDeal = $scope.loadedDeal ? $scope.loadedDeal : {};
+			console.log($scope.loadedDeal);
+		} else {
+			$scope.loadedDeal = $scope.loadedDeal ? $scope.loadedDeal : {};
+			$scope.loadedDeal["$resolved"] = true;
 		}
+		console.log($scope.loadedDeal);
 	} else {
 		nameToUse = urlStrArr[urlStrArr.length - 1];
 		if (myDeals.$loaded) {
@@ -61,9 +66,8 @@ function dealOps($rootScope, $scope, $http, $localStorage, $firebaseObject, $fir
 				console.log(response.data);
 			});
 		}
+		console.log($scope.loadedDeal);
 	}
-
-	$scope.loadedDeal = $scope.loadedDeal ? $scope.loadedDeal : {};
 
 	$scope.uploadFiles = function(file, errFiles) {
 		window.setTimeout(function() {

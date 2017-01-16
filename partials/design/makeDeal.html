@@ -138,13 +138,13 @@
 		<span class="glyphicon glyphicon-print"></span>
 	</button>
 </div>
-<div style="position:fixed;bottom: 10px;right: 25px" class="fixed-bottom" ng-show='deals["$resolved"]'>
+<div style="position:fixed;bottom: 10px;right: 25px" class="fixed-bottom" ng-show='loadedDeal["$resolved"]'>
 	<button   type="button" class="btn btn-default btn-lg" ng-click="showSide=!showSide">
 		<span class="glyphicon glyphicon-resize-full " ng-show="showSide"></span>
 		<span class="glyphicon glyphicon-resize-small " ng-show="!showSide"></span>
 	</button>
 </div>
-<div class="row text-center" ng-hide='deals["$resolved"]' id="loadingCover">
+<div class="row text-center" ng-hide='loadedDeal["$resolved"]' id="loadingCover">
 	<img class="img-responsive center-block" src="images/box.gif" style="margin-top: 20%;" />
 </div>
 <div ng-include="'partials/lan.html'"></div>
