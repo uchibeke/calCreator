@@ -26,7 +26,8 @@ function dealOps($rootScope, $scope, $http, $localStorage, $firebaseObject, $fir
 			"end" : dealEnd,
 			"phone" : ss.options.pNum,
 			"name" : ss.options.BizName,
-			"logo" : $scope.loadedDeal.logo ? $scope.loadedDeal.logo : "-"
+			"logo" : $scope.loadedDeal.logo ? $scope.loadedDeal.logo : "-",
+			"gal" : $scope.loadedDeal.gal
 		};
 		firebase.database().ref(ss.options.BizName).set(newDeal);
 	};
