@@ -1,6 +1,10 @@
 <section class=" text-center animated flip" id="dealPage" >
 	<div class=" col-xs-12 jumbotron" >
-		<div class="text-center row center-block" style="margin-top: 0px" >
+		<div class="text-center row center-block" style="margin-top: -25px" >
+			<img src="{{'data:image\/(png|jpg);base64,' + loadedDeal.logo}}" width="50px" >
+			<p >
+				{{$storage.options.bizNameFromUrl}}
+			</p>
 			<p class="text-center">
 				{{loadedDeal.description}}
 			</p>
@@ -10,21 +14,26 @@
 			<h1 class="text-center">{{loadedDeal.savings}} </h1>
 			<span> {{loadedDeal.start}} - {{loadedDeal.end}} </span>
 			<p></p>
-			<span class="glyphicon glyphicon-phone" style="font-size: 40px;"></span>
-			<a href="tel:{{loadedDeal.phone}}" style="color: white !important;"><img class="img-responsive center-block" ng-show="loadedDeal.description"
-			src="{{barcodeSrc(loadedDeal.phone,'#ffffff','#000000')}}"></a>
+			<!-- <span class="glyphicon glyphicon-phone" style="font-size: 40px;"></span> -->
+			<!-- <a href="tel:{{loadedDeal.phone}}" style="color: white !important;"><img class="img-responsive center-block" ng-show="loadedDeal.description"
+			src="{{barcodeSrc(loadedDeal.phone,'#ffffff','#000000')}}"></a> -->
 			<img class="img-responsive center-block" ng-hide="loadedDeal.description"
 			src="{{barcodeSrc('http://www.calcreator.me','#ffffff','#000000')}}">
 			<p></p>
-			<span class="glyphicon glyphicon-earphone" style="font-size: 20px;"></span>
-			<h1 style="margin-top: -10px;"><a href="tel:{{loadedDeal.phone}}" style="color: white !important;">{{loadedDeal.phone}}</a></h1>
+			<span class="glyphicon glyphicon-earphone" style="font-size: 30px;"></span>
+			<h2 style="margin-top: -5px;"><a href="tel:{{loadedDeal.phone}}" style="color: white !important;">{{loadedDeal.phone}}</a></h2>
 		</div>
 	</div>
-	<div class="row center-block text-center" style="position: fixed;bottom: 5px;width: 100%">
-		<p >
-			{{$storage.options.bizNameFromUrl}}
-		</p>
-		<img src="{{'data:image\/(png|jpg);base64,' + loadedDeal.logo}}" width="50px" >
+	<div class="row center-block text-center" style="position: fixed;bottom: 0px;width: 100%">
+
+		<div class="row-fluid center-block" >
+			<div class="col-xs-12 center-block" id="gal-container">
+				<div class="gallery-container center-block" id="galDiv">
+					<img src="{{'data:image\/(png|jpg);base64,' + loadedDeal.logo}}" class="gallery-item" style="height:250px;" >
+					<img ng-repeat="image in loadedDeal.gal" src="{{'data:image\/(png|jpg);base64,' + image}}"  ng-show="image"  class="gallery-item" style="height:250px;" />
+				</div>
+			</div>
+		</div>
 	</div>
 </section>
 <div ng-include="'partials/lan.html'"></div>

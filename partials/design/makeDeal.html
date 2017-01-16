@@ -18,7 +18,7 @@
 							<input class="form-control"  type="text"
 							ng-model="$storage.options.BizName">
 						</div>
-						<button ngf-select="uploadFiles($file, $invalidFiles)"  ng-model="$storage.companyLogo" accept="image/*"
+						<button ngf-select="uploadFiles($file, $invalidFiles, $storage.options.BizName + '/logo')"  ng-model="$storage.companyLogo" accept="image/*"
 						class="btn  btn-file btn-default">
 							{{$storage.lan.nameBadge.selectLogo}}
 						</button>
@@ -90,7 +90,23 @@
 							<input class="form-control"  type="text"
 							ng-model="$storage.options.dealEnd">
 						</div>
-						<p ng-hide="$storage.options.dealDesc">
+						<p ng-show="$storage.options.dealDesc">
+							{{$storage.lan.nameBadge.addGalItem}}
+						</p>
+						<button ngf-select="uploadFiles($file, $invalidFiles, $storage.options.BizName + '/gal/1')"  ng-model="galItem1" accept="image/*"
+						class="btn  btn-file btn-default form-control">
+							1<img ngf-src="galItem1"  class="logo center-block" ng-hide="true" style="max-width: 30px"/>
+						</button>
+						<button ngf-select="uploadFiles($file, $invalidFiles, $storage.options.BizName + '/gal/2')"  ng-model="galItem2" accept="image/*"
+						class="btn  btn-file btn-default form-control">
+							2<img ngf-src="galItem2"  class="logo center-block" ng-hide="true" style="max-width: 30px"/>
+						</button>
+						<button ngf-select="uploadFiles($file, $invalidFiles, $storage.options.BizName + '/gal/3')"  ng-model="galItem3" accept="image/*"
+						class="btn  btn-file btn-default form-control">
+							3<img ngf-src="galItem3"  class="logo center-block" ng-hide="true" style="max-width: 30px"/>
+						</button>
+						<p></p>
+						<p ng-show="$storage.options.dealDesc">
 							{{$storage.lan.nameBadge.dealAddDown}}
 						</p>
 						<a ng-click="updateDeal($storage.options.dealDesc, $storage.options.dealSavings

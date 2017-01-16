@@ -66,10 +66,11 @@ function dealOps($rootScope, $scope, $http, $localStorage, $firebaseObject, $fir
 		}
 	}
 
-	$scope.uploadFiles = function(file, errFiles) {
+	$scope.uploadFiles = function(file, errFiles, pos) {
 		window.setTimeout(function() {
 			var url = file["$ngfBlobUrl"];
 			console.log(url);
+			console.log(file.size);
 
 			var img = new Image();
 
@@ -79,13 +80,18 @@ function dealOps($rootScope, $scope, $http, $localStorage, $firebaseObject, $fir
 				var canvas = document.createElement("canvas");
 				canvas.width = this.width;
 				canvas.height = this.height;
+				if (file.size > 1000000) {
+					canvas.width = this.width / 2;
+					canvas.height = this.height / 2;
+				}
 
 				var ctx = canvas.getContext("2d");
-				ctx.drawImage(this, 0, 0);
+				ctx.drawImage(this, 0, 0, img.width, img.height, 0, 0, canvas.width, canvas.height);
 
 				var dataURL = canvas.toDataURL("image/png");
 				var cleaned = dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
-				firebase.database().ref(ss.options.BizName + "/logo").set(cleaned);
+				firebase.database().ref(pos).set(cleaned);
+				// firebase.database().ref(ss.options.BizName + "/logo").set(cleaned);
 				var lRef = firebase.database().ref(ss.options.BizName);
 				var lDeals = $firebaseObject(lRef);
 				$scope.loadedDeal = lDeals;

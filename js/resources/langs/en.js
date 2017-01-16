@@ -35,6 +35,7 @@ var en = {
 		"selectLogo" : "Upload Logo",
 		"dealAddUp" : "The deal you add here is what customers see when they scan the qr code in the calendar. A unique web page with your deal will be generated",
 		"dealAddDown" : "Clicking submit opens new window with your deal. This is what customers see when they scan the code",
-		"comingSoon" : "Deal coming soon"
+		"comingSoon" : "Deal coming soon",
+		"addGalItem" : "Add up to three images to show in your promo page"
 	}
 };
