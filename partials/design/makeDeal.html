@@ -1,4 +1,4 @@
-<section class="guestinfo  container-fluid pg animated pulse " ng-class="{'fancgyBg' : showSide}"  >
+<section class="guestinfo  container-fluid pg animated pulse "  >
 	<div class="hideOnPrint" ng-hide="printSet" style="background: white;">
 		<div  style="position: fixed;top: 25px;left: 25px" >
 			<button   type="button" class="btn btn-default"
@@ -101,9 +101,9 @@
 			</div>
 			<div class="col-sm-10 col-xs-12 ticketPreview">
 				<h3 class="text-center row center-block">{{$storage.lan.nameBadge.preview}}</h3>
-				<div class="row center text-center center-block">
+				<div class="row center text-center center-block" >
 					<slick autoplaySpeed="500" fade="true" dots="true" infinite="true" arrows="true" class="choices">
-						<div ng-repeat="format in $storage.user.styles.badgeFormats.formats " class="center-block">
+						<div ng-repeat="format in $storage.user.styles.badgeFormats.formats " class="center-block" ng-class="{'zoomMe' : showSide}">
 							<div ng-include="format"></div>
 						</div>
 					</slick>

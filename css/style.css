@@ -425,7 +425,7 @@ a {
 }
 
 #dealPage {
-	color:white !important;
+	color: white !important;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -436,7 +436,7 @@ a {
 	background-size: cover;
 }
 #loadingCover {
-	color:white !important;
+	color: white !important;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -449,7 +449,7 @@ a {
 }
 
 #dealPage .jumbotron {
-	background-color:inherit !important;
+	background-color: inherit !important;
 }
 
 #home_welcome, .brandTitle {
@@ -700,6 +700,7 @@ body {
 	padding: 20px;
 	z-index: 100;
 	background: #F50057 !important;
+	top: 25%  !important;
 }
 #def-cols {
 	margin: 10px 0px 0px 0px;

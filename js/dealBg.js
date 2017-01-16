@@ -53,4 +53,3 @@ function updateGradient(elID) {
 }
 
 setInterval("updateGradient('#dealPage')", 10); 
-setInterval("updateGradient('.fancgyBg')", 10); 

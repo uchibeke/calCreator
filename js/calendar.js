@@ -36,7 +36,8 @@ function calendarOps($rootScope, $scope, $http, $localStorage) {
 	}
 	
 	ss.user.styles.badgeFormats = {
-		'formats' : ['partials/badges/b3.html', 'partials/badges/b2.html', 'partials/badges/b1.html', 'partials/badges/b4.html', 'partials/badges/b5.html']
+		'formats' : ['partials/badges/b3.html', 'partials/badges/b2.html', 'partials/badges/b1.html', 
+		'partials/badges/b4.html', 'partials/badges/b5.html', 'partials/badges/b6.html']
 	};
 	
 	
