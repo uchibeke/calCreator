@@ -8,14 +8,13 @@
 			<p class="text-center"  style="margin-top: -20px;">
 				{{loadedDeal.description}}
 			</p>
-			<p class="text-center" ng-hide="loadedDeal.description">
+			<p class="text-center" ng-hide="loadedDeal.description" style="margin-top: -20px;">
 				{{$storage.lan.nameBadge.comingSoon}}
 			</p>
 			<h2 class="text-center" style="margin-top: -20px;">{{loadedDeal.savings}} </h2>
 			<span> {{loadedDeal.start}} - {{loadedDeal.end}} </span>
-			<p></p>
 			<img class="img-responsive center-block" ng-hide="loadedDeal.description"
-			src="{{barcodeSrc('http://www.calcreator.me','#ffffff','#000000')}}">
+			src="{{barcodeSrc('http://www.calcreator.me','#ffffff','#000000')}}" style="margin-top: -20px;">
 			<p></p>
 			<span class="glyphicon glyphicon-earphone" style="font-size: 30px;margin-top: -15px;"></span>
 			<h3 style="margin-top: -5px;"><a href="tel:{{loadedDeal.phone}}" style="color: white !important;">{{loadedDeal.phone}}</a></h3>
