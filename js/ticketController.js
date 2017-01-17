@@ -9,26 +9,6 @@ function($rootScope, $scope, $http, $localStorage, $sce, Upload, $timeout, analy
 
 	var ss = $scope.$storage;
 
-	$http.get('js/resources/crayola.json').then(function(result) {
-		var xx = result.data;
-
-		$http.get('js/resources/styles.json').then(function(result2) {
-			ss.style = result2.data.concat(xx).concat(manyColors);
-		}, function(error) {
-			console.log(error);
-		}).finally(function() {
-		});
-
-	}, function(error) {
-		console.log(error);
-	}).finally(function() {
-	});
-
-	$http.get('js/resources/ticketVariants.json').then(function(result) {
-		$scope.ticketVariants = result.data;
-	}, function(result) {
-	}).finally(function() {
-	});
 
 	$scope.ticketOrder = 'ticketTitle';
 	$scope.ticketSearch = '';

@@ -1,7 +1,7 @@
 <section class=" text-center animated flip" id="dealPage" >
 	<div class=" col-xs-12 jumbotron" >
 		<div class="text-center row center-block" style="margin-top: -30px" >
-			<img src="{{'data:image\/(png|jpg);base64,' + loadedDeal.logo}}" width="50px" >
+			<img src="{{$storage.options.logo}}" width="50px" >
 			<p >
 				{{$storage.options.bizNameFromUrl}}
 			</p>
@@ -22,13 +22,12 @@
 		</div>
 	</div>
 	<div class="row center-block text-center" style="position: fixed;bottom: 0px;width: 100%">
-
 		<div class="row-fluid center-block" >
 			<div class="col-xs-12 center-block" id="gal-container">
 				<div class="gallery-container center-block" id="galDiv">
-					<img src="images/ball.gif"  style="height:50px;margin: 100px"  ng-hide='loadedDeal.gal'/>
-					<img src="{{'data:image\/(png|jpg);base64,' + loadedDeal.logo}}" class="gallery-item" style="height:200px;"   ng-show='loadedDeal.logo'>
-					<img ng-repeat="image in loadedDeal.gal" src="{{'data:image\/(png|jpg);base64,' + image}}"  ng-show="image"  class="gallery-item" style="height:200px;" />
+					<img src="images/ball.gif"  style="height:50px;margin: 150px"  ng-hide='loadedDeal'/>
+					<img src="{{$storage.options.logo}}" class="gallery-item" style="height:200px;"   ng-show='loadedDeal'>
+					<img ng-repeat="image in dealImages track by $index" src="{{image}}"  ng-show="image"  class="gallery-item" style="height:200px;" />
 				</div>
 			</div>
 		</div>
