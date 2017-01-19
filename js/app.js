@@ -17,6 +17,9 @@ function($routeProvider) {
 	}).when('/d/:bizName', {
 		templateUrl : 'partials/deal.html',
 		controller : 'TicketController'
+	}).when('/info', {
+		templateUrl : 'partials/info.html',
+		controller : 'TicketController'
 	}).otherwise({
 		redirectTo : '/make'
 	});

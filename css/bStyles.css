@@ -281,6 +281,7 @@
 
 .calHeader .dItem {
 	color: #F50632 !important;
+	font-weight:800 !important;
 }
 .calHeader .sunday {
 	color: #ffa642 !important;
@@ -456,8 +457,22 @@
 	width: auto;
 	vertical-align: bottom;
 	cursor: zoom-in;
+	color:white !important;
 	/*border: 10px solid #fff;
 	border-bottom: 45px solid #fff;*/
+}
+
+#infoPg  {
+	padding:0 10% 0 10%;
+}
+
+#infoPg p {
+	padding:0 10% 0 10%;
+}
+
+
+#infoPg  p,#infoPg  li, #infoPg  a{
+	font-size:17px;
 }
 
 #previewModal * {

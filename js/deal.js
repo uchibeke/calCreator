@@ -54,7 +54,7 @@ function dealOps($rootScope, $scope, $http, $localStorage, $firebaseObject, $fir
 		nameToUse = urlStrArr[urlStrArr.length - 1];
 		$http.get(apiUrl + nameToUse + ".json").then(function(response) {
 			$scope.loadedDeal = response.data;
-			ss.lan.nameBadge.title = $scope.loadedDeal.name;
+			ss.lan.nameBadge.title = $scope.loadedDeal ? $scope.loadedDeal.name : ss.lan.nameBadge.title;
 		}, function(response) {
 			// failure callback
 			console.log(response.data);
