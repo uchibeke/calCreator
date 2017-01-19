@@ -15,10 +15,11 @@ function dealOps($rootScope, $scope, $http, $localStorage, $firebaseObject, $fir
 
 	$scope.deals = myDeals;
 
-	function downloadImages(pos, dealsPage) {
+	$scope.downloadImages = function(pos, dealsPage) {
 		// Create a reference to the file we want to download
 		if (dealsPage) {
 		} else {
+			ss.options.logo = "";
 			var userImagesRefHead = storageRef.child(pos);
 			// Get the download URL
 			userImagesRefHead.getDownloadURL().then(function(url) {
@@ -35,7 +36,7 @@ function dealOps($rootScope, $scope, $http, $localStorage, $firebaseObject, $fir
 
 	ss.options.bizNameFromUrl = decodeURIComponent(urlStrArr[urlStrArr.length - 1]);
 	var nameToUse = ss.options.BizName;
-	downloadImages(nameToUse + '/logo', false);
+	$scope.downloadImages(nameToUse + '/logo', false);
 	if (urlStrArr[urlStrArr.length - 1] === 'make') {
 		if (ss.options.BizName) {
 			var lRef = firebase.database().ref(ss.options.BizName);

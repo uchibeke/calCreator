@@ -23,7 +23,7 @@
 						<div class="form-group">
 							<label>{{$storage.lan.nameBadge.bizNameInst}}</label>
 							<input class="form-control"  type="text"
-							ng-model="$storage.options.BizName">
+							ng-model="$storage.options.BizName" ng-blur="downloadImages($storage.options.BizName + '/logo', false)">
 						</div>
 						<div class="form-group">
 							<label>{{$storage.lan.nameBadge.eBiz}}</label>
