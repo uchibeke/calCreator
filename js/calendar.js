@@ -14,7 +14,7 @@ function calendarOps($rootScope, $scope, $http, $localStorage) {
 			<head>
 				<meta charset="UTF-8">
 				<meta name="viewport" content="width=device-width, initial-scale=1">
-				<link rel="stylesheet" media="all"  href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed">
+				<link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Noto+Sans|Londrina+Solid|Great+Vibes|Pacifico|Material+Icons" rel="stylesheet">
 				<link rel="stylesheet" media="all" href="css/style.css">
 				<link rel="stylesheet" media="all" href="css/bStyles.css">
 				<link rel="stylesheet" media="all" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
@@ -198,8 +198,8 @@ function calendarOps($rootScope, $scope, $http, $localStorage) {
 			"bg" : "#cc9d7a",
 			"txt" : "#000000"
 		},{
-			"bg" : "#0f124a",
-			"txt" : "#ffa642"
+			"bg" : "#ffa642",
+			"txt" : "#0f124a"
 		},{
 			"bg" : "#fdf998",
 			"txt" : "#17806D"

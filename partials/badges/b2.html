@@ -1,15 +1,15 @@
 <div id="gift2" class="gift">
-	<div class="text-center month" style="display: inline;float: left;">
+	<div class="text-center month" style="display: inline;float: left;margin-left: 1.05px">
 		<h4  ng-attr-style="{{previewStyleInverseBg()}}">{{$storage.lan.nameBadge.getDeal}}</h4>
 		<img alt="Add guest to see barcode" class="img-responsive"
 		src="{{barcodeSrc(dealUrl(),'#ffffff','#000000')}}">
-		<span style="font-size: 10pt;" id="calBody" class="text-center">{{$storage.options.pNum}}</span>
+		<span style="font-size: 13pt;border: 0 !important;padding-left: 0px !important" id="calBody" class="text-center">{{$storage.options.pNum}}</span>
 	</div>
 	<div ng-repeat="cal in $storage.options.cals" class="text-left month">
 		<h4  ng-attr-style="{{previewStyleInverseBg()}}">{{cal.year}} - {{ make2Dig(cal.month)}}</h4>
 		<p ng-bind-html="dispCal(cal.month, cal.year)" id="calBody"></p>
 	</div>
-	<div id="pSpace1" ng-attr-style="{{previewStyle()}}">
+	<div id="pSpace1">
 		<div id="bottomOfSection"  ng-attr-style="{{previewStyleInverse()}}">
 			{{ $storage.options.bizDets | limitTo: 42 }}{{$storage.options.bizDets.length > 50 ? '...' : ''}}
 		</div>
@@ -18,7 +18,7 @@
 				<span ng-bind-html="str"  ng-attr-style="{{previewStyle()}}"></span>
 			</p>
 		</div> -->
-		<div id="imgDiv" ng-attr-style="{{previewStyle()}}">
+		<div id="imgDiv">
 			<img ngf-src="$storage.UpldImgs[0]" class="img-responsive text-center"></img>
 		</div>
 		<div id="CLogo" ng-attr-style="{{previewStyleInverse()}}">
