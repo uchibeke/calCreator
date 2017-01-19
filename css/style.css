@@ -436,7 +436,7 @@ a {
 	background-size: cover;
 }
 #loadingCover {
-	color: white !important;
+	color: black !important;
 	position: fixed;
 	top: 0;
 	left: 0;

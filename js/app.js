@@ -5,9 +5,9 @@ function($routeProvider) {
 	$routeProvider.when('/make', {
 		templateUrl : 'partials/design/makeDeal.html',
 		controller : 'TicketController'
-	}).when('', {
+	}).when('/start', {
 		templateUrl : 'partials/home.html',
-		controller : 'MainController'
+		controller : 'TicketController'
 	}).when('/login', {
 		templateUrl : 'partials/login.html',
 		controller : 'LoginController'
@@ -30,8 +30,14 @@ function($rootScope, $location, $firebaseAuth, $localStorage, shareDataService) 
 		g : $rootScope.guests
 	});
 
-	// $rootScope.$storage.lan = $rootScope.$storage.lan ? $rootScope.$storage.lan : ch;
 	// $rootScope.$on('$routeChangeStart', function(event, currRoute, prevRoute) {
+	//
+	// if ($rootScope.$storage.hasOwnProperty('info') && $rootScope.$storage.info.hasOwnProperty('bizName') && $rootScope.$storage.info.bizName) {
+	// $location.path(currRoute.originalPath);
+	// } else {
+	// $location.path('/start');
+	// }
+
 	// var isAuth = $firebaseAuth().$getAuth();
 	// if ($rootScope.$storage.hasOwnProperty('user') && $rootScope.$storage.user.hasOwnProperty('token') && $rootScope.$storage.user.token != undefined) {
 	// $location.path(currRoute.originalPath);
@@ -47,6 +53,7 @@ function($rootScope, $location, $firebaseAuth, $localStorage, shareDataService) 
 	// }
 	// shareDataService.setProperty('signedInUser', firebase.auth().currentUser);
 	// });
+
 }]);
 
 var highlightedNav = {

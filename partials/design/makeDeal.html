@@ -2,16 +2,16 @@
 	<div class="hideOnPrint" ng-hide="printSet" style="background: white;">
 		<div  style="position: fixed;top: 25px;left: 25px" >
 			<button   type="button" class="btn btn-default"
-			ng-click="customizeDeal=!customizeDeal;">
-				<span class="" ng-show="!customizeDeal">{{$storage.lan.nameBadge.editDeal}}</span>
-				<span class="" ng-show="customizeDeal">{{$storage.lan.nameBadge.editCal}}</span>
+			ng-click="$storage.options.customizeDeal=!$storage.options.customizeDeal;">
+				<span class="" ng-show="!$storage.options.customizeDeal">{{$storage.lan.nameBadge.editDeal}}</span>
+				<span class="" ng-show="$storage.options.customizeDeal">{{$storage.lan.nameBadge.editCal}}</span>
 			</button>
 		</div>
 		<h1 class="text-center" style="padding-top: 10px;">{{$storage.lan.nameBadge.title}}</h1>
 		<div class="row   center-block ">
 			<div class="col-sm-2 col-xs-12 pull-left ticketContent">
 				<h3 class="text-center">{{$storage.lan.nameBadge.content}}</h3>
-				<div ng-show="!customizeDeal"  class="fadein fadeout">
+				<div ng-show="!$storage.options.customizeDeal"  class="fadein fadeout">
 					<form role="form " id="upldForm">
 						<div class="form-group">
 							<label>{{$storage.lan.nameBadge.bizNameInst}}</label>
@@ -55,7 +55,7 @@
 						</div>
 					</div>
 				</div>
-				<div ng-show="customizeDeal" class="fadein fadeout">
+				<div ng-show="$storage.options.customizeDeal" class="fadein fadeout">
 					<form role="form ">
 						<p ng-hide="$storage.options.dealDesc">
 							{{$storage.lan.nameBadge.dealAddUp}}
@@ -175,6 +175,12 @@
 </div>
 <div class="row text-center" ng-hide='loadedDeal["$resolved"]' id="loadingCover">
 	<img class="img-responsive center-block" src="images/box.gif" style="margin-top: 20%;" />
+</div>
+<div class="row text-center" ng-hide='!$storage.options.uploading' id="loadingCover">
+	<img class="img-responsive center-block" src="images/box.gif" style="margin-top: 20%;" />
+	<p style="font-size: 25;font-weight: bold;">
+		{{uploadProgress}} Uploading...
+	</p>
 </div>
 <div ng-include="'partials/lan.html'"></div>
 <img ngf-src="$storage.companyLogo"  class="logo center-block" ng-hide="true" style="max-width: 100px"/>

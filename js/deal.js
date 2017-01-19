@@ -20,12 +20,12 @@ function dealOps($rootScope, $scope, $http, $localStorage, $firebaseObject, $fir
 	function downloadImages(pos, dealsPage) {
 		// Create a reference to the file we want to download
 		if (dealsPage) {
+			// 5 is the number of supported images
 			for (var i = 1; i <= 5; i++) {
 				var userImagesRefHead = storageRef.child(pos + i);
 				// Get the download URL
 				userImagesRefHead.getDownloadURL().then(function(url) {
 					$scope.dealImages.push(url);
-					console.log(url);
 				}).catch(function(error) {
 					console.log(error);
 				});
@@ -35,16 +35,20 @@ function dealOps($rootScope, $scope, $http, $localStorage, $firebaseObject, $fir
 			// Get the download URL
 			userImagesRefHead.getDownloadURL().then(function(url) {
 				ss.options.logo = url;
-				console.log(ss.options.logo);
 			}).catch(function(error) {
 				console.log(error);
 			});
 		}
 	};
 
+	$scope.logo = function() {
+		return ss.options.logo;
+	};
+
 	ss.options.bizNameFromUrl = decodeURIComponent(urlStrArr[urlStrArr.length - 1]);
 	var nameToUse = ss.options.BizName;
 	downloadImages(nameToUse + '/logo', false);
+	downloadImages(nameToUse + '/gal/', true);
 	if (urlStrArr[urlStrArr.length - 1] === 'make') {
 		if (ss.options.BizName) {
 			var lRef = firebase.database().ref(ss.options.BizName);
@@ -54,18 +58,14 @@ function dealOps($rootScope, $scope, $http, $localStorage, $firebaseObject, $fir
 			$scope.loadedDeal = lDeals;
 
 			$scope.loadedDeal = $scope.loadedDeal ? $scope.loadedDeal : {};
-			// $scope.loadedDeal["$resolved"] = true;
 		} else {
 			$scope.loadedDeal = $scope.loadedDeal ? $scope.loadedDeal : {};
 			$scope.loadedDeal["$resolved"] = true;
 		}
 	} else {
 		nameToUse = urlStrArr[urlStrArr.length - 1];
-		downloadImages(nameToUse + '/gal/', true);
 		$http.get(apiUrl + nameToUse + ".json").then(function(response) {
 			$scope.loadedDeal = response.data;
-			$scope.loadedDeal.gal = $scope.loadedDeal;
-			// success callback
 		}, function(response) {
 			// failure callback
 			console.log(response.data);
@@ -75,8 +75,9 @@ function dealOps($rootScope, $scope, $http, $localStorage, $firebaseObject, $fir
 	$scope.dealUrl = function() {
 		return hostingUrl + '%23!/d/' + encodeURIComponent(ss.options.BizName) + "/";
 	};
-
+	ss.options.uploading = false;
 	$scope.uploadFiles = function(file, errFiles, pos) {
+		ss.options.uploading = true;
 		window.setTimeout(function() {
 			var url = file["$ngfBlobUrl"];
 			console.log(url);
@@ -101,10 +102,30 @@ function dealOps($rootScope, $scope, $http, $localStorage, $firebaseObject, $fir
 				var dataURL = canvas.toDataURL("image/png");
 				var cleaned = dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
 
-				firebase.storage().ref(pos).putString(cleaned, 'base64').then(function(snapshot) {
+				var uploadTask = firebase.storage().ref(pos).putString(cleaned, 'base64');
+
+				uploadTask.on('state_changed', function(snapshot) {
+					// Observe state change events such as progress, pause, and resume
+					// Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+					$scope.uploadProgress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+					console.log('Upload is ' + $scope.uploadProgress + '% done');
+					switch (snapshot.state) {
+					case firebase.storage.TaskState.PAUSED:
+						// or 'paused'
+						console.log('Upload is paused');
+						break;
+					case firebase.storage.TaskState.RUNNING:
+						// or 'running'
+						console.log('Upload is running');
+						break;
+					}
+				}, function(error) {
+					// Handle unsuccessful uploads
+				}, function() {
 					console.log('Uploaded a base64 string!');
-					console.log(snapshot);
-					downloadImages(nameToUse + '/logo', false);
+					location.reload();
+					ss.options.uploading = false;
+					var downloadURL = uploadTask.snapshot.downloadURL;
 				});
 
 				var lRef = firebase.database().ref(ss.options.BizName);
@@ -127,8 +148,17 @@ function dealOps($rootScope, $scope, $http, $localStorage, $firebaseObject, $fir
 			"end" : dealEnd,
 			"phone" : ss.options.pNum,
 			"name" : ss.options.BizName,
-			"logo" : $scope.loadedDeal.logo ? $scope.loadedDeal.logo : "-"
+			"logo" : ss.options.logo
 		};
 		firebase.database().ref(ss.options.BizName).set(newDeal);
 	};
+
+	// User details
+	// images : logo
+	// Add
+	// Read
+	// Synch
+
+	// User Deal Details
+	// images : logo + Company photos
 }
