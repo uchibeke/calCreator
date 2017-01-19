@@ -1,16 +1,16 @@
 <section class="guestinfo  container-fluid pg animated pulse "  >
 	<div class="hideOnPrint" ng-hide="printSet" style="background: white;">
-		<div  style="position: fixed;top: 25px;left: 25px" >
-			<button   type="button" class="btn btn-default"
-			ng-click="$storage.options.customizeDeal=!$storage.options.customizeDeal;">
-				<span class="" ng-show="!$storage.options.customizeDeal">{{$storage.lan.nameBadge.editDeal}}</span>
-				<span class="" ng-show="$storage.options.customizeDeal">{{$storage.lan.nameBadge.editCal}}</span>
-			</button>
-		</div>
 		<h1 class="text-center" style="padding-top: 10px;">{{$storage.lan.nameBadge.title}}</h1>
 		<div class="row   center-block ">
 			<div class="col-sm-2 col-xs-12 pull-left ticketContent">
 				<h3 class="text-center">{{$storage.lan.nameBadge.content}}</h3>
+				<div class="row form-group">
+					<button   type="button" class="btn btn-default btn-xs form-control"
+					ng-click="$storage.options.customizeDeal=!$storage.options.customizeDeal;">
+						<span class="" ng-show="!$storage.options.customizeDeal">{{$storage.lan.nameBadge.editDeal}}</span>
+						<span class="" ng-show="$storage.options.customizeDeal">{{$storage.lan.nameBadge.editCal}}</span>
+					</button>
+				</div>
 				<div ng-show="!$storage.options.customizeDeal"  class="fadein fadeout">
 					<form role="form " id="upldForm">
 						<div class="form-group">
@@ -18,10 +18,12 @@
 							<input class="form-control"  type="text"
 							ng-model="$storage.options.BizName">
 						</div>
-						<button ngf-select="uploadFiles($file, $invalidFiles, $storage.options.BizName + '/logo')"  ng-model="$storage.companyLogo" accept="image/*"
-						class="btn  btn-file btn-default">
-							{{$storage.lan.nameBadge.selectLogo}}
-						</button>
+						<div class="form-group">
+							<button ngf-select="uploadFiles($file, $invalidFiles, $storage.options.BizName + '/logo')"  ng-model="$storage.companyLogo" accept="image/*"
+							class="btn  btn-file btn-default">
+								{{$storage.lan.nameBadge.selectLogo}}
+							</button>
+						</div>
 						<div class="form-group">
 							<label>{{$storage.lan.nameBadge.eBiz}}</label>
 							<input class="form-control"  type="text"
@@ -32,10 +34,13 @@
 							<input class="form-control"  type="text"
 							ng-model="$storage.options.pNum">
 						</div>
-						<button ngf-select ng-model="$storage.UpldImgs[0]" accept="image/*"
-						class="btn  btn-file btn-default">
-							{{$storage.lan.nameBadge.select}}
-						</button>
+						<hr />
+						<div class="form-group">
+							<button ngf-select ng-model="$storage.UpldImgs[0]" accept="image/*"
+							class="btn  btn-file btn-default">
+								{{$storage.lan.nameBadge.select}}
+							</button>
+						</div>
 						<div class="form-group">
 							<label>{{$storage.lan.nameBadge.eMsg}}</label>
 							<input class="form-control"  type="text" ng-change="getOnePerline ($storage.options.personalizedMsg)"
@@ -91,6 +96,13 @@
 							ng-model="$storage.options.dealEnd">
 						</div>
 						<p ng-show="$storage.options.dealDesc">
+							{{$storage.lan.nameBadge.dealAddDown}}
+						</p>
+						<a ng-click="updateDeal($storage.options.dealDesc, $storage.options.dealSavings
+						,$storage.options.dealStart,$storage.options.dealEnd)"
+						class="btn  btn-file btn-default"  ng-href="{{'#!/d/' + $storage.options.BizName}}" target="_blank"> {{$storage.lan.nameBadge.submitDeal}} </a>
+						<hr />
+						<p ng-show="$storage.options.dealDesc">
 							{{$storage.lan.nameBadge.addGalItem}}
 						</p>
 						<button ngf-select="uploadFiles($file, $invalidFiles, $storage.options.BizName + '/gal/1')"  ng-model="galItem1" accept="image/*"
@@ -118,13 +130,6 @@
 							5
 						</button>
 						<img ngf-src="galItem5"  class="logo center-block" ng-hide="true" style="max-width: 60px"/>
-						<p></p>
-						<p ng-show="$storage.options.dealDesc">
-							{{$storage.lan.nameBadge.dealAddDown}}
-						</p>
-						<a ng-click="updateDeal($storage.options.dealDesc, $storage.options.dealSavings
-						,$storage.options.dealStart,$storage.options.dealEnd)"
-						class="btn  btn-file btn-default"  ng-href="{{'#!/d/' + $storage.options.BizName}}" target="_blank"> {{$storage.lan.nameBadge.submitDeal}} </a>
 					</form>
 				</div>
 			</div>
@@ -177,7 +182,7 @@
 	<img class="img-responsive center-block" src="images/box.gif" style="margin-top: 20%;" />
 </div>
 <div class="row text-center" ng-hide='!$storage.options.uploading' id="loadingCover">
-	<img class="img-responsive center-block" src="images/box.gif" style="margin-top: 20%;" />
+	<img class="img-responsive center-block" src="images/flickr.gif" style="margin-top: 20%;" />
 	<p style="font-size: 25;font-weight: bold;">
 		{{uploadProgress}} Uploading...
 	</p>

@@ -48,7 +48,6 @@ function dealOps($rootScope, $scope, $http, $localStorage, $firebaseObject, $fir
 	ss.options.bizNameFromUrl = decodeURIComponent(urlStrArr[urlStrArr.length - 1]);
 	var nameToUse = ss.options.BizName;
 	downloadImages(nameToUse + '/logo', false);
-	downloadImages(nameToUse + '/gal/', true);
 	if (urlStrArr[urlStrArr.length - 1] === 'make') {
 		if (ss.options.BizName) {
 			var lRef = firebase.database().ref(ss.options.BizName);
@@ -64,8 +63,10 @@ function dealOps($rootScope, $scope, $http, $localStorage, $firebaseObject, $fir
 		}
 	} else {
 		nameToUse = urlStrArr[urlStrArr.length - 1];
+		downloadImages(nameToUse + '/gal/', true);
 		$http.get(apiUrl + nameToUse + ".json").then(function(response) {
 			$scope.loadedDeal = response.data;
+			$storage.lan.nameBadge.title = $scope.loadedDeal.name;
 		}, function(response) {
 			// failure callback
 			console.log(response.data);
@@ -153,12 +154,4 @@ function dealOps($rootScope, $scope, $http, $localStorage, $firebaseObject, $fir
 		firebase.database().ref(ss.options.BizName).set(newDeal);
 	};
 
-	// User details
-	// images : logo
-	// Add
-	// Read
-	// Synch
-
-	// User Deal Details
-	// images : logo + Company photos
 }
