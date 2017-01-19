@@ -23,10 +23,11 @@
 	<div class="row center-block text-center" style="position: fixed;bottom: 0px;width: 100%">
 		<div class="row-fluid center-block" >
 			<div class="col-xs-12 center-block" id="gal-container">
-				<div class="gallery-container center-block" id="galDiv">
+				<div class="gallery-container center-block   animated slideInLeft" id="galDiv">
 					<img src="images/ball.gif"  style="height:50px;margin: 150px"  ng-hide='loadedDeal'/>
 					<img src="{{loadedDeal.logo}}" class="gallery-item" style="height:200px;"   ng-show='loadedDeal'>
-					<img ng-repeat="image in dealImages track by $index" src="{{image}}"  class="gallery-item" style="height:200px;" />
+					<img ng-repeat="image in loadedDeal.gal track by $index" src="{{image}}" ng-show="image"  class="gallery-item" style="height:200px;" />
+					<!-- <img ng-repeat="image in dealImages track by $index" src="{{image}}"  class="gallery-item" style="height:200px;" /> -->
 				</div>
 			</div>
 		</div>

@@ -2,15 +2,16 @@
 	<div class="hideOnPrint" ng-hide="printSet" style="background: white;">
 		<h1 class="text-center" style="padding-top: 10px;">{{$storage.lan.nameBadge.title}}</h1>
 		<div class="row   center-block ">
-			<div class="col-sm-2 col-xs-12 pull-left ticketContent">
+			<div class="col-sm-2 col-xs-12 pull-left ticketContent" style="border-right: 1px solid #EEEEEE;">
 				<h3 class="text-center">{{$storage.lan.nameBadge.content}}</h3>
-				<div class="row form-group">
+				<div class=" form-group">
 					<button   type="button" class="btn btn-default btn-xs form-control"
 					ng-click="$storage.options.customizeDeal=!$storage.options.customizeDeal;">
 						<span class="" ng-show="!$storage.options.customizeDeal">{{$storage.lan.nameBadge.editDeal}}</span>
 						<span class="" ng-show="$storage.options.customizeDeal">{{$storage.lan.nameBadge.editCal}}</span>
 					</button>
 				</div>
+				<hr />
 				<div ng-show="!$storage.options.customizeDeal"  class="fadein fadeout">
 					<form role="form " id="upldForm">
 						<div class="form-group">
@@ -47,7 +48,7 @@
 							ng-model="$storage.options.personalizedMsg">
 						</div>
 					</form>
-					<div class="clearfix"></div>
+					<hr />
 					<div class="col-xs-12">
 						<div class="col-xs-12" >
 							<div class="text-center row ticketColors">

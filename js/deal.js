@@ -15,21 +15,9 @@ function dealOps($rootScope, $scope, $http, $localStorage, $firebaseObject, $fir
 
 	$scope.deals = myDeals;
 
-	$scope.dealImages = $scope.dealImages ? $scope.dealImages : [];
-
 	function downloadImages(pos, dealsPage) {
 		// Create a reference to the file we want to download
 		if (dealsPage) {
-			// 5 is the number of supported images
-			for (var i = 1; i <= 5; i++) {
-				var userImagesRefHead = storageRef.child(pos + i);
-				// Get the download URL
-				userImagesRefHead.getDownloadURL().then(function(url) {
-					$scope.dealImages.push(url);
-				}).catch(function(error) {
-					console.log(error);
-				});
-			}
 		} else {
 			var userImagesRefHead = storageRef.child(pos);
 			// Get the download URL
@@ -63,10 +51,9 @@ function dealOps($rootScope, $scope, $http, $localStorage, $firebaseObject, $fir
 		}
 	} else {
 		nameToUse = urlStrArr[urlStrArr.length - 1];
-		downloadImages(nameToUse + '/gal/', true);
 		$http.get(apiUrl + nameToUse + ".json").then(function(response) {
 			$scope.loadedDeal = response.data;
-			$storage.lan.nameBadge.title = $scope.loadedDeal.name;
+			ss.lan.nameBadge.title = $scope.loadedDeal.name;
 		}, function(response) {
 			// failure callback
 			console.log(response.data);
@@ -127,6 +114,11 @@ function dealOps($rootScope, $scope, $http, $localStorage, $firebaseObject, $fir
 					location.reload();
 					ss.options.uploading = false;
 					var downloadURL = uploadTask.snapshot.downloadURL;
+					var arrFrompos = pos.split("/");
+					console.log(pos);
+					if (arrFrompos.length > 1) {
+						firebase.database().ref(pos).set(downloadURL);
+					}
 				});
 
 				var lRef = firebase.database().ref(ss.options.BizName);

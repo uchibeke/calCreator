@@ -15,7 +15,7 @@
 			<img ngf-src="$storage.UpldImgs[0]" class="img-responsive text-center"></img>
 		</div>
 		<div id="bottomOfSection"  ng-attr-style="{{previewStyleInverse()}}">
-			{{ $storage.options.bizDets | limitTo: 42 }}{{$storage.options.bizDets.length > 50 ? '...' : ''}}
+			{{ $storage.options.bizDets | limitTo: 42 }}{{$storage.options.bizDets.length > 60 ? '...' : ''}}
 		</div>
 	</div>
 	<div class="text-center month" style="display: inline;float: left;">
@@ -25,7 +25,7 @@
 		<span style="font-size: 10pt;" id="calBody" class="text-center">{{$storage.options.pNum}}</span>
 	</div>
 	<div ng-repeat="cal in $storage.options.cals" class="text-left month">
-		<h4  ng-attr-style="{{previewStyleInverseBg()}}">{{ make2Dig(cal.month)}},  {{cal.year}}</h4>
+		<h4  ng-attr-style="{{previewStyleInverseBg()}}">{{cal.year}} - {{ make2Dig(cal.month)}}</h4>
 		<p ng-bind-html="dispCal(cal.month, cal.year)" id="calBody"></p>
 	</div>
 </div>
