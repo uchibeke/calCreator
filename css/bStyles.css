@@ -24,7 +24,7 @@
 	-moz-print-color-adjust: exact !important;
 	page-break-inside: avoid !important;
 }
-.b1Header {
+.b1{
 	font-family: 'Noto Sans', sans-serif;
 	font-weight: bold;
 	padding-top: 15px;
@@ -281,7 +281,6 @@
 
 .calHeader .dItem {
 	color: #F50632 !important;
-	font-weight:800 !important;
 }
 .calHeader .sunday {
 	color: #ffa642 !important;
