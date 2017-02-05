@@ -21,11 +21,9 @@ function($routeProvider) {
 		templateUrl : 'partials/info.html',
 		controller : 'TicketController'
 	}).otherwise({
-		redirectTo : '/make'
+		redirectTo : '/info'
 	});
 }]);
-// Condition base:
-// http://stackoverflow.com/questions/11541695/redirecting-to-a-certain-route-based-on-condition
 
 myApp.run(['$rootScope', '$location', '$firebaseAuth', '$localStorage', 'shareDataService',
 function($rootScope, $location, $firebaseAuth, $localStorage, shareDataService) {
