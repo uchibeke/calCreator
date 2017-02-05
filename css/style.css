@@ -731,3 +731,25 @@ body {
 	opacity: 1;
 	display: block !important;
 }
+
+
+
+.portfolioPageAlt {
+    background: #313649;
+    color: #E8EFF2 !important;
+	/*padding:30px 0px 30px 0px;*/
+}
+
+.portfolioPageAlt p {
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.portfolioPageAlt h1 {
+    color: #E8EFF2 !important;
+}
+
+.portfolioPageAlt img {
+	padding:30px 0px 30px 0px !important;
+	border-bottom: 1px solid #ffffff;
+}

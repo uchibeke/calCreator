@@ -15,12 +15,6 @@
 				<div ng-show="!$storage.options.customizeDeal"  class="fadein fadeout">
 					<form role="form " id="upldForm">
 						<div class="form-group">
-							<button ngf-select="uploadFiles($file, $invalidFiles, $storage.options.BizName + '/logo')"  ng-model="$storage.companyLogo" accept="image/*"
-							class="btn  btn-file btn-default">
-								{{$storage.lan.nameBadge.selectLogo}}
-							</button>
-						</div>
-						<div class="form-group">
 							<label>{{$storage.lan.nameBadge.bizNameInst}}</label>
 							<input class="form-control"  type="text"
 							ng-model="$storage.options.BizName" ng-blur="downloadImages($storage.options.BizName + '/logo', false)">
@@ -34,6 +28,12 @@
 							<label>{{$storage.lan.nameBadge.pNum}}</label>
 							<input class="form-control"  type="text"
 							ng-model="$storage.options.pNum">
+						</div>
+						<div class="form-group">
+							<button ngf-select="uploadFiles($file, $invalidFiles, $storage.options.BizName + '/logo')"  ng-model="$storage.companyLogo" accept="image/*"
+							class="btn  btn-file btn-default">
+								{{$storage.lan.nameBadge.selectLogo}}
+							</button>
 						</div>
 						<hr />
 						<div class="form-group">
@@ -188,5 +188,5 @@
 		{{uploadProgress}} Uploading...
 	</p>
 </div>
-<div ng-include="'partials/lan.html'"></div>
+<!--<div ng-include="'partials/lan.html'"></div>-->
 <img ngf-src="$storage.companyLogo"  class="logo center-block" ng-hide="true" style="max-width: 100px"/>
