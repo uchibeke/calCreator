@@ -123,8 +123,8 @@ ticketControllers.controller('TicketController', ['$rootScope', '$scope', '$http
             // location.reload();
         };
 
-        calendarOps($rootScope, $scope, $http, $localStorage);
-        dealOps($rootScope, $scope, $http, $localStorage, $firebaseObject, $firebaseArray, $firebaseAuth, $location);
+        calendarOps($rootScope, $scope, $http, $localStorage, analytics);
+        dealOps($rootScope, $scope, $http, $localStorage, $firebaseObject, $firebaseArray, $firebaseAuth, $location), analytics;
         var userLang = navigator.language || navigator.userLanguage;
 
         $rootScope.$storage.en = en;

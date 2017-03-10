@@ -3,7 +3,7 @@ var _gaq = _gaq || [];
 angular.module('analytics', []).run(['$http',
 function($http) {
 
-	_gaq.push(['_setAccount', 'UA-73072492-1']);
+	_gaq.push(['_setAccount', 'UA-93424215-1']);
 	_gaq.push(['_trackPageview']);
 
 	var ga = document.createElement('script');
