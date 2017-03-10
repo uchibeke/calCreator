@@ -1,5 +1,6 @@
-\.idea/*
+.idea/
 \.**.xml
-\.DS_Store
+.DS_Store
 *.xml
 \.*
+node_modules/
