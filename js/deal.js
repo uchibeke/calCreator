@@ -4,13 +4,11 @@ function dealOps($rootScope, $scope, $http, $localStorage, $firebaseObject, $fir
     const storageRef = firebase.storage().ref();
 
     var urlStrArr = $location.path().split("/");
-
     const ss = $scope.$storage;
 
     ss.options = ss.options ? ss.options : {};
 
     var dealsRef = firebase.database().ref();
-
     var myDeals = $firebaseObject(dealsRef);
 
     $scope.deals = myDeals;
@@ -21,7 +19,6 @@ function dealOps($rootScope, $scope, $http, $localStorage, $firebaseObject, $fir
         } else {
             ss.options.logo = "";
             var userImagesRefHead = storageRef.child(pos);
-            // Get the download URL
             userImagesRefHead.getDownloadURL().then(function (url) {
                 ss.options.logo = url;
             }).catch(function (error) {
@@ -56,7 +53,6 @@ function dealOps($rootScope, $scope, $http, $localStorage, $firebaseObject, $fir
             $scope.loadedDeal = response.data;
             ss.lan.nameBadge.title = $scope.loadedDeal ? $scope.loadedDeal.name : ss.lan.nameBadge.title;
         }, function (response) {
-            // failure callback
             console.log(response.data);
         });
     }
@@ -64,6 +60,8 @@ function dealOps($rootScope, $scope, $http, $localStorage, $firebaseObject, $fir
     $scope.dealUrl = function () {
         return hostingUrl + '%23!/d/' + encodeURIComponent(ss.options.BizName) + "/";
     };
+
+
     ss.options.uploading = false;
     $scope.uploadFiles = function (file, errFiles, pos) {
         ss.options.uploading = true;
@@ -130,9 +128,6 @@ function dealOps($rootScope, $scope, $http, $localStorage, $firebaseObject, $fir
         }, 2000);
     };
 
-    $scope.deleteAllDeals = function () {
-
-    };
 
     $scope.updateDeal = function (dealDescription, savings, dealStart, dealEnd) {
         var newDeal = {

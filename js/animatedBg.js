@@ -1,11 +1,6 @@
 var colors = new Array([62, 35, 255], [60, 255, 60], [255, 35, 98], [45, 175, 230], [255, 0, 255], [255, 128, 0]);
 
 var step = 0;
-//color table indices for:
-// current color left
-// next color left
-// current color right
-// next color right
 var colorIndices = [0, 1, 2, 3];
 
 //transition speed
@@ -20,6 +15,7 @@ function updateGradient(elID) {
 	var c0_1 = colors[colorIndices[1]];
 	var c1_0 = colors[colorIndices[2]];
 	var c1_1 = colors[colorIndices[3]];
+
 
 	var istep = 1 - step;
 	var r1 = Math.round(istep * c0_0[0] + step * c0_1[0]);
