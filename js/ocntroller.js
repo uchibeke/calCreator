@@ -1,41 +1,16 @@
-var ticketControllers = angular.module('ticketControllers', ['ngStorage', 'ngSanitize', "firebase", 'ngFileUpload', 'ngImgCrop', 'slick', 'ngAnimate']);
+var con = angular.module('mainController', ['ngStorage', 'ngSanitize', "firebase", 'ngFileUpload', 'ngImgCrop', 'slick', 'ngAnimate']);
 
-ticketControllers.controller('TicketController', ['$rootScope', '$scope', '$http', '$localStorage', '$sce', 'Upload', '$timeout', 'analytics', '$firebaseObject', '$firebaseArray', '$firebaseAuth', 'shareDataService', '$location',
-    function ($rootScope, $scope, $http, $localStorage, $sce, Upload, $timeout, analytics, $firebaseObject, $firebaseArray, $firebaseAuth, shareDataService, $location) {
+con.controller('MainController', ['$rootScope', '$scope', '$http', '$localStorage', '$sce', 'Upload', '$timeout', 'analytics', '$firebaseObject', '$firebaseArray', '$firebaseAuth', '$location', '$window',
+    function ($rootScope, $scope, $http, $localStorage, $sce, Upload, $timeout, analytics, $firebaseObject, $firebaseArray, $firebaseAuth, $location, $window) {
 
         $scope.$storage = $localStorage.$default({
             ticket: $scope.ticketdata,
         });
 
         var ss = $scope.$storage;
-
-
         $scope.ticketOrder = 'ticketTitle';
         $scope.ticketSearch = '';
-
         $scope.bc = 10;
-
-        $scope.showTicket = function (ind) {
-            for (var i; i < ss.length; i++) {
-                if (i == ind) {
-                    $scope.show = true;
-                } else {
-                    $scope.show = false;
-                }
-            }
-        };
-
-        $scope.ticketBackground = function (color) {
-            ss.ticketText = ss.ticketText;
-            ss.ticketBgColor = color;
-            $scope.userFillColor = ss.ticketBgColor;
-        };
-
-        $scope.ticketTxtColor = function (color) {
-            ss.ticketBgColor = ss.ticketBgColor;
-            ss.ticketText = color;
-            $scope.userTextColor = ss.ticketText;
-        }
 
         $scope.previewStyle = function () {
             return "background-color: " + ss.ticketBgColor + "!important;" + "color: " + ss.ticketText + "!important;";
@@ -93,13 +68,6 @@ ticketControllers.controller('TicketController', ['$rootScope', '$scope', '$http
 
         ss.user = ss.user != undefined ? ss.user : {};
         ss.user.styles = ss.user.styles != undefined ? ss.user.styles : {};
-        if (ss.user.styles.selectedTicFormat == undefined && ss.user.styles.selectedTicFormatPre == undefined) {
-            ss.user.styles.selectedTicFormat = 'partials/tickets/t1.html';
-        }
-
-        ss.user.styles.ticketFormats = {
-            'formats': ['partials/tickets/t1.html', 'partials/tickets/t2.html', 'partials/tickets/t3.html']
-        };
 
         // Limit number of badges and tickets to 10 because of the way this works
         ss.user.styles.setSelectedInd = function () {
@@ -120,7 +88,6 @@ ticketControllers.controller('TicketController', ['$rootScope', '$scope', '$http
         $scope.changeLan = function (lan) {
             console.log("lan");
             $rootScope.$storage.lan = lan;
-            // location.reload();
         };
 
         calendarOps($rootScope, $scope, $http, $localStorage, analytics);
