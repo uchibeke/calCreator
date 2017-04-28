@@ -170,9 +170,6 @@ function calendarOps($rootScope, $scope, $http, $localStorage, analytics) {
         // $scope.userFillColor = ss.ticketBgColor;
     };
 
-    ss.ticketBgColor = ss.ticketBgColor ? ss.ticketBgColor : "#ffa642";
-    ss.ticketText = ss.ticketText ? ss.ticketText : "#0f124a";
-
 
     $scope.$storage.defaultColors = [{
         "bg": "#F2DB79",
@@ -236,6 +233,9 @@ function calendarOps($rootScope, $scope, $http, $localStorage, analytics) {
         "txt": "#F50632"
     }
     ]
+
+    ss.ticketBgColor = ss.ticketBgColor ? ss.ticketBgColor : "#ffffff";
+    ss.ticketText = ss.ticketText ? ss.ticketText : "#F50632";
 
 
 }

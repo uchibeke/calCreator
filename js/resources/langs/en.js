@@ -39,13 +39,13 @@ var en = {
         "addGalItem": "Add up to three images to show in your promo page"
     },
     "info": {
-        "title": "Getting and keeping more customers",
-        "why": "Why",
+        "title": "The Calender Maker",
+        "why": "Benefits",
         "intro": "I believe that customers will be more inclined to keep the calendar if they know that they can scan it to get deals in your restaurant or hotel. I believe that it should also be easy to change the pictures that show up.",
         "scan": "Scan code now with wechat to see a sample of what customers will see.",
         "intro2": "This is more than just a calendar. You're giving customers something that can interact with while also putting your business information out there.",
         "features": "Features",
-        "featureIntro": "More than just a calendar genrator, this app helps your customers have quick access to your business information and deals about your business by scanning a qr code.",
+        "featureIntro": "More than just a calendar generator, this app helps your customers have quick access to your business information and deals about your business by scanning a qr code.",
         "feature1": "Generate and print calendars",
         "feature2": "Add deals/promo and get your own unique webpage",
         "feature3": "Customers scan qr code with wechat and see your business page",
