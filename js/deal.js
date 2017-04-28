@@ -1,18 +1,16 @@
 function dealOps($rootScope, $scope, $http, $localStorage, $firebaseObject, $firebaseArray, $firebaseAuth, $location, analytics) {
 	const apiUrl = "https://calcreator-d490f.firebaseio.com/";
 	const hostingUrl = "http://calcreator.me/";
-	const storageRef = firebase.storage().ref();
 
 	var urlStrArr = $location.path().split("/");
 	const ss = $scope.$storage;
 
 	ss.options = ss.options ? ss.options : {};
+	
+	ss.options.bizNameFromUrl = decodeURIComponent(urlStrArr[urlStrArr.length - 1]);
+	var nameToUse = ss.options.BizName;
 
-	var dealsRef = firebase.database().ref();
-	var myDeals = $firebaseObject(dealsRef);
-
-	$scope.deals = myDeals;
-
+	const storageRef = firebase.storage().ref();
 	$scope.downloadImages = function(pos, dealsPage) {
 		// Create a reference to the file we want to download
 		if (dealsPage) {
@@ -21,8 +19,8 @@ function dealOps($rootScope, $scope, $http, $localStorage, $firebaseObject, $fir
 			var userImagesRefHead = storageRef.child(pos);
 			userImagesRefHead.getDownloadURL().then(function(url) {
 				ss.options.logo = url;
-				$("#eBizSimClick" ).focus();
-				$("#eBizSimClick" ).blur();
+				$("#eBizSimClick").focus();
+				$("#eBizSimClick").blur();
 				setTimeout(function() {
 					document.getElementsByTagName("body")[0].click();
 				}, 100);
@@ -32,13 +30,17 @@ function dealOps($rootScope, $scope, $http, $localStorage, $firebaseObject, $fir
 		}
 	};
 
+	$scope.downloadImages(nameToUse + '/logo', false);
+
+	var dealsRef = firebase.database().ref();
+	var myDeals = $firebaseObject(dealsRef);
+
+	$scope.deals = myDeals;
+
 	$scope.logo = function() {
 		return ss.options.logo;
 	};
 
-	ss.options.bizNameFromUrl = decodeURIComponent(urlStrArr[urlStrArr.length - 1]);
-	var nameToUse = ss.options.BizName;
-	$scope.downloadImages(nameToUse + '/logo', false);
 	if (urlStrArr[urlStrArr.length - 1] === 'make') {
 		if (ss.options.BizName) {
 			var lRef = firebase.database().ref(ss.options.BizName);

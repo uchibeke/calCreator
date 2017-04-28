@@ -12,12 +12,15 @@
 		<script src="js/libs/angular-route.min.js"></script>
 		<script src="js/libs/angular-animate.min.js"></script>
 		<link rel="shortcut icon" href="{{$storage.lan.nameBadge.logo}}"/>
-
-		<script src="js/resources/langs/en.js"></script>
-		<script src="js/resources/langs/ch.js"></script>
 	</head>
 
 	<body>
+
+		<div autoscroll="true" class="" ng-view></div>
+		
+
+		<script src="js/resources/langs/en.js"></script>
+		<script src="js/resources/langs/ch.js"></script>
 		<link href='css/font-awesome.min.css' rel='stylesheet'
 		type='text/css'>
 		<link rel="stylesheet" media="all" href="css/animate.css">
@@ -53,8 +56,6 @@
 			firebase.initializeApp(config);
 
 		</script>
-
-		<div autoscroll="true" class="" ng-view></div>
 
 		<script src="js/libs/ngStorage.js"></script>
 		<script src="js/libs/ng-file-upload.js"></script>
