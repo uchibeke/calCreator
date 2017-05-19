@@ -1,0 +1,31 @@
+<div id="gift4"class="gift">
+	<div id="pSpace1">
+		<div id="CLogo" ng-attr-style="{{previewStyleInverse()}}">
+			<div id="logoDiv1">
+				<img src="{{$storage.options.logo}}"  class="logo pull-left" />
+			</div >
+			<div id="logoTxt">
+				<span class="bizName " ng-attr-style="{{previewStyleInverse()}}">{{$storage.options.BizName}}</span>
+			</div>
+			<div id="logoDiv2">
+				<img src="{{$storage.options.logo}}"  class="logo pull-right" />
+			</div >
+		</div>
+		<div id="imgDiv">
+			<img ngf-src="$storage.UpldImgs[0]" class="img-responsive text-center"></img>
+		</div>
+		<div id="bottomOfSection"  ng-attr-style="{{previewStyleInverse()}}">
+			{{ $storage.options.bizDets | limitTo: 42 }}{{$storage.options.bizDets.length > 50 ? '...' : ''}}
+		</div>
+	</div>
+	<div class="text-center month" style="display: inline;float: left;margin-left: 1.05px">
+		<h4  ng-attr-style="{{previewStyleInverseBg()}}">{{$storage.lan.nameBadge.getDeal}}</h4>
+		<img alt="Add guest to see barcode" class="img-responsive"
+		src="{{barcodeSrc(dealUrl(),'#ffffff','#000000')}}">
+		<span style="font-size: 13pt;border: 0 !important;padding-left: 0px !important" id="calBody" class="text-center">{{$storage.options.pNum}}</span>
+	</div>
+	<div ng-repeat="cal in $storage.options.cals" class="text-left month">
+		<h4  ng-attr-style="{{previewStyleInverseBg()}}">{{cal.year}} - {{ make2Dig(cal.month)}}</h4>
+		<p ng-bind-html="dispCal(cal.month, cal.year)" id="calBody"></p>
+	</div>
+</div>

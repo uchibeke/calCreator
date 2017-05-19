@@ -1,0 +1,148 @@
+<section class=" guestinfo  container-fluid pg  animated pulse "  id="infoPg">
+	<div class="row   center-block ">
+		<h1 class="text-center" style="padding-top: 10px;">{{$storage.lan.info.title}}</h1>
+		<div>
+			<h2 class="text-center">{{$storage.lan.info.why}}</h2>
+			<p>
+				{{$storage.lan.info.intro}}
+			</p>
+			<div class="row portfolioPageAlt">
+				<img src="images/samples/live.png" class="img-responsive center-block"  width="400px"/>
+			</div>
+			<br />
+			<p class="text-info text-center">
+				{{$storage.lan.info.scan}}
+			</p>
+			<div class="row portfolioPageAlt">
+				<img src="images/samples/code.png" class="img-responsive center-block" width="150px" />
+			</div>
+			<br />
+			<p>
+				{{$storage.lan.info.intro2}}
+			</p>
+			<div class="clearfix"></div>
+			<div class="row portfolioPageAlt">
+				<div class="col-md-6 col-sm-12">
+					<img src="images/samples/cal7.png" class="img-responsive center-block" width="75%"/>
+				</div>
+				<div class="col-md-6 col-sm-12">
+					<img src="images/samples/cal3.png" class="img-responsive center-block"  width="75%"/>
+				</div>
+			</div>
+		</div>
+		<div>
+			<h2 class="text-center">{{$storage.lan.info.features}}</h2>
+			<p>
+				{{$storage.lan.info.featureIntro}}
+			</p>
+			<ul class="list-group">
+				<li class="list-group-item">
+					{{$storage.lan.info.feature1}}
+				</li>
+				<li class="list-group-item">
+					{{$storage.lan.info.feature2}}
+				</li>
+				<li class="list-group-item">
+					{{$storage.lan.info.feature3}}
+				</li>
+				<li class="list-group-item">
+					{{$storage.lan.info.feature4}}
+				</li>
+			</ul>
+			<div class="clearfix"></div>
+		</div>
+		<div class="clearfix"></div>
+		<div class="row ">
+			<img src="images/samples/make2.png" class="img-responsive center-block"  width="100%"/>
+		</div>
+		<div>
+			<h2 class="text-center">{{$storage.lan.info.howTo}}</h2>
+			<div class="col-md-6 col-sm-12 portfolioPageAlt">
+				<img src="images/samples/cal2.png" class="img-responsive center-block" width="75%"/>
+			</div>
+			<div class="col-md-6 col-sm-12 portfolioPageAlt">
+				<img src="images/samples/cal4.png" class="img-responsive center-block"  width="75%"/>
+			</div>
+			<div class="clearfix"></div>
+			<p>
+				<span class="glyphicon glyphicon-exclamation-sign text-muted" style="font-size: 40px;"></span>
+				{{$storage.lan.info.howToIntro}}
+			</p>
+			<ul class="list-group">
+				<li class="list-group-item">
+					<ul class="list-group">
+						<h3>{{$storage.lan.info.howToSetup}}</h3>
+						<li class="list-group-item">
+							{{$storage.lan.info.howToSetup1}}
+						</li>
+						<li class="list-group-item">
+							{{$storage.lan.info.howToSetup2}}
+						</li>
+						<li class="list-group-item">
+							{{$storage.lan.info.howToSetup3}}
+						</li>
+						<li class="list-group-item">
+							{{$storage.lan.info.howToSetup4}}
+						</li>
+					</ul>
+				</li>
+				<li class="list-group-item">
+					<ul class="list-group">
+						<h3> {{$storage.lan.info.howToPrint}}</h3>
+						<li class="list-group-item">
+							{{$storage.lan.info.howToPrint1}}
+						</li>
+						<li class="list-group-item">
+							{{$storage.lan.info.howToPrint2}}
+						</li>
+						<li class="list-group-item">
+							{{$storage.lan.info.howToPrint3}}
+						</li>
+						<li class="list-group-item">
+							{{$storage.lan.info.howToPrint4}}
+						</li>
+					</ul>
+				</li>
+				<li class="list-group-item">
+					<ul class="list-group">
+						<h3>{{$storage.lan.info.howToAddDeal}}</h3>
+						<li class="list-group-item">
+							{{$storage.lan.info.howToAddDeal1}}
+						</li>
+						<li class="list-group-item">
+							{{$storage.lan.info.howToAddDeal2}}
+						</li>
+						<li class="list-group-item">
+							{{$storage.lan.info.howToAddDeal3}}
+						</li>
+						<li class="list-group-item">
+							{{$storage.lan.info.howToAddDeal4}}
+						</li>
+						<li class="list-group-item">
+							{{$storage.lan.info.howToAddDeal5}}
+						</li>
+						<li class="list-group-item">
+							{{$storage.lan.info.howToAddDeal5}}
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<div class="col-md-6 col-sm-12 portfolioPageAlt">
+				<img src="images/samples/cal5.png" class="img-responsive center-block" width="75%"/>
+			</div>
+			<div class="col-md-6 col-sm-12 portfolioPageAlt">
+				<img src="images/samples/cal6.png" class="img-responsive center-block"  width="75%"/>
+			</div>
+		</div>
+
+	</div>
+</section>
+<div ng-include="'partials/lan.html'"></div>
+<div class="row" style="position: fixed;left: 40px;top:30px">
+	<a class="btn btn-default btn-lg"  ng-href="#!/make" target="_blank"> {{$storage.lan.home.gStarted}} </a>
+</div>
+
+<!--
+Test:
+- Always test qr code with wechat to see if you get the correct website
+- -->

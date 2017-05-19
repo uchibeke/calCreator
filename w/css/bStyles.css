@@ -1,0 +1,517 @@
+/*B1*/
+
+.b1Outer {
+	border: 1px solid black;
+	background: #2c57a9;
+	width: 3in;
+	height: 4in;
+	font-size: 3.5 rem;
+	text-align: center;
+	color: white;
+	display: inline-block;
+	print-color-adjust: exact !important;
+	-webkit-print-color-adjust: exact !important;
+	-moz-print-color-adjust: exact !important;
+	page-break-inside: avoid !important;
+	font-family: 'Noto Sans', sans-serif;
+	margin-top: 5px;
+}
+.b1Tag {
+	padding-bottom: 0.2in;
+	width: 100%;
+	print-color-adjust: exact !important;
+	-webkit-print-color-adjust: exact !important;
+	-moz-print-color-adjust: exact !important;
+	page-break-inside: avoid !important;
+}
+.b1{
+	font-family: 'Noto Sans', sans-serif;
+	font-weight: bold;
+	padding-top: 15px;
+	font-size: 20px;
+}
+
+.b1Tag p, .b1Tag footer {
+	font-weight: normal;
+	margin: -5px 0 10px 0;
+	padding: 0;
+	font-family: 'Noto Sans', sans-serif;
+	print-color-adjust: exact !important;
+	-webkit-print-color-adjust: exact !important;
+	-moz-print-color-adjust: exact !important;
+	page-break-inside: avoid !important;
+}
+.b1Main {
+	background: white;
+	height: 2.8in;
+	font-size: 18px;
+	padding: 0.6in 5px 0px 5px;
+	font-family: 'Noto Sans', sans-serif;
+}
+.name, .b1Main:first-line {
+	font-weight: bold;
+	font-size: 35px;
+	margin-bottom: 1rem;
+}
+.b1Tag footer {
+	margin: 10px 0 2rem;
+	print-color-adjust: exact !important;
+	-webkit-print-color-adjust: exact !important;
+	-moz-print-color-adjust: exact !important;
+	page-break-inside: avoid !important;
+}
+
+.b1Main .company {
+	font-size: 15px;
+}
+
+/*B2*/
+
+#b2Tag {
+	border-radius: 20px;
+	padding: 1px;
+	position: relative;
+	height: 2.6875in;
+	width: 3.375in;
+	align: center;
+	border: 1px solid #EEEEEE;
+	display: inline-block;
+	print-color-adjust: exact !important;
+	-webkit-print-color-adjust: exact !important;
+	-moz-print-color-adjust: exact !important;
+	page-break-inside: avoid !important;
+	font-family: 'Noto Sans', sans-serif;
+}
+.b2Name {
+	font-size: 50px;
+	padding-top: 15px;
+	border: solid;
+	height: 1.15in;
+	width: 3.075in;
+	margin: 0.15in !important;
+	border: 1px solid #EEEEEE;
+}
+.b2Header {
+	font-size: 40px;
+	border: none;
+	padding: 1px;
+	color: #dbaf81;
+	height: 0.5in;
+	width: 3.075in;
+	align: top;
+	margin-bottom: 5px;
+	margin-top: -10px;
+}
+.B2Hello {
+	margin-top: 15px;
+	font-size: 50px;
+	font-weight: bold;
+	border: none;
+	color: #dbaf81;
+	height: 0.6875in;
+	width: 3.075in;
+	align: top;
+}
+
+/*B3*/
+
+#b3Tag {
+	background-color: #404040;
+	width: 3.5in;
+	height: 2in;
+	color: blue;
+	align: center;
+	border-radius: 20px;
+	border: 1px solid #EEEEEE;
+	position: relative;
+	display: inline-block;
+	print-color-adjust: exact !important;
+	-webkit-print-color-adjust: exact !important;
+	-moz-print-color-adjust: exact !important;
+	page-break-inside: avoid !important;
+	vertical-align: top;
+}
+
+#b3Tag h1 {
+	color: #dbaf81;
+	font-family: 'Lobster', cursive;
+	font-size: 0.5in;
+	margin-top: 20px;
+	margin-bottom: -5px;
+	padding-top: 5px;
+	padding-bottom: 15px;
+}
+
+#b3Tag h1:hover {
+	color: #dbaf81;
+}
+
+#b3Tag h2 {
+	color: #dbaf81;
+	font-family: 'Noto Sans', sans-serif;
+	font-size: 20px;
+	padding: 0px 5px 0px 5px;
+}
+
+#b3Tag p {
+	color: #dbaf81;
+	font-family: 'Noto Sans', sans-serif;
+	font-size: 18px;
+	border-radius: 20px;
+}
+
+/*Standard Sizes*/
+
+.gift {
+	width: 8.25in !important;
+	height: 11.75in !important;
+	text-align: center;
+	display: inline-block;
+	margin: auto;
+	text-align: center;
+	print-color-adjust: exact !important;
+	-webkit-print-color-adjust: exact !important;
+	-moz-print-color-adjust: exact !important;
+	page-break-inside: avoid !important;
+	border: 0.1px solid #EEEEEE;
+}
+
+.gift h4 {
+
+	padding: 5px 0px 3px 0in !important;
+	text-align: center;
+	margin: 0px;
+	print-color-adjust: exact !important;
+	-webkit-print-color-adjust: exact !important;
+	-moz-print-color-adjust: exact !important;
+	page-break-inside: avoid !important;
+	background: white;
+	font-weight: 700 !important;
+}
+
+#gift1 h4 {
+	border-top: 3px dotted #EEEEEE;
+	box-shadow: inset 0 -1px 0 0 white, inset 0 1px 0 0 white, 0 1px 0 0 white, 0 -1px 0 0 white;
+	font-family: "Noto Sans", Georgia, Times, serif;
+	letter-spacing: -1px;
+}
+
+#gift2 h4 {
+	border: 1px dashed #ddd;
+	box-shadow: 0 0 0 3px #fff, 0 0 0 5px #EEEEEE, 0 0 0 10px #fff, 0 0 2px 10px #EEEEEE;
+	font-family: 'Rouge Script', cursive;
+	letter-spacing: -1px;
+}
+
+#gift3 h4 {
+	border-top: 7px dotted white !important;
+	box-shadow: inset 0 3px 0 0 white, 0 -3px 0 0 white !important;
+	font-family: times, Times New Roman, times-roman, georgia, serif;
+}
+
+#gift4 h4 {
+	border: 1px solid white;
+	border-top-left-radius: 0.5in;
+	border-top-right-radius: 0.5in;
+	border-top: 7px dotted #EEEEEE !important;
+	box-shadow: inset 0 3px 0 0 #EEEEEE, 0 -3px 0 0 #EEEEEE !important;
+	font-family: 'Great Vibes, sans-serif; text-transform : uppercase;
+}
+
+#gift5 h4 {
+	border-top: 7px dotted white !important;
+	box-shadow: inset 0 3px 0 0 white, 0 -3px 0 0 white !important;
+	font-family: 'Londrina Solid', georgia, serif;
+}
+
+#gift6 h4 {
+	border: 1px dashed white;
+	font-family: 'Pacifico', cursive;
+	font-size: 0.23in;
+	letter-spacing: -1px;
+}
+
+.dItem {
+	margin-right: 0.11in;
+	text-align: center;
+	font-size: 0.10in !important;
+	color: inherit !important;
+	line-height: 1.85 !important;
+	font-family: 'Roboto Condensed', 'Candal', monospace, sans-serif;
+	print-color-adjust: exact !important;
+	-webkit-print-color-adjust: exact !important;
+	-moz-print-color-adjust: exact !important;
+	page-break-inside: avoid !important;
+	background: white !important;
+	vertical-align: top;
+}
+.tab-1 {
+	margin-right: 0.020in !important;
+	font-family: 'Roboto Condensed', 'Candal', monospace, sans-serif;
+}
+
+.month {
+	position: relative;
+	display: inline-block !important;
+	padding: 0px 0px 0px 0in !important;
+	margin-bottom: -5px !important;
+	width: 1.642in;
+	height: 1.75in !important;
+	text-align: center;
+	print-color-adjust: exact !important;
+	-webkit-print-color-adjust: exact !important;
+	-moz-print-color-adjust: exact !important;
+	page-break-inside: avoid !important;
+	vertical-align: top;
+	background: white !important;
+}
+
+#calBody {
+	padding: 0px 0px 0px 0.1in !important;
+	color: #333333  !important;
+	background: white !important;
+	border-left: 0.1px solid gray !important;
+	border-right: 0.1px solid gray !important;
+	min-height: 1.5in !important;
+}
+
+.calHeader {
+	color: inherit !important;
+}
+
+.calHeader .dItem {
+	color: #F50632 !important;
+}
+.calHeader .sunday {
+	color: #ffa642 !important;
+}
+
+.sunday {
+	color: #ffa642 !important;
+}
+
+/*g1*/
+#pSpace1 {
+	height: 6.4in;
+	border: 1px solid transparent;
+	print-color-adjust: exact !important;
+	-webkit-print-color-adjust: exact !important;
+	-moz-print-color-adjust: exact !important;
+	page-break-inside: avoid !important;
+	background: white !important;
+	vertical-align: top;
+}
+
+#CLogo {
+	height: 0.8in;
+	text-align: center !important;
+	margin: 0in 0in 0.05in 0in !important;
+}
+
+#CLogo #logoDiv1 {
+	width: 2.007in !important;
+	float: left;
+}
+#CLogo #logoTxt {
+	padding: 0.2in 0in 0.2in 0in !important;
+	width: 4.20in !important;
+	float: left;
+}
+#CLogo #logoDiv2 {
+	width: 2in !important;
+	float: left;
+}
+#CLogo .logo {
+	text-align: center;
+	display: inline-block;
+	max-height: 0.8in;
+}
+.bizName {
+	font-size: 20pt;
+	font-weight: 600px;
+}
+
+#leftSide {
+	width: 1in !important;
+	position: relative;
+	margin: 0in 0in 0in 0in !important;
+}
+
+#personalizecMsg {
+	word-wrap: break-word;
+	margin: 0in 0in 0in 0.1in;
+	font-size: 20px;
+	text-align: center;
+	height: 3in;
+}
+
+#imgDiv {
+	height: 4.9in;
+	width: 7in;
+	margin: 0in 0in 0in 0in;
+	padding: 0px;
+	position: relative;
+	display: inline-block;
+}
+
+#leftSide img, #imgDiv img, #rightSide img, .month img {
+	/*border-radius: 20px;*/
+	zoom: 2;
+	/*increase if you have very small images*/
+
+	display: block;
+	margin: auto;
+	height: auto;
+	max-height: 100%;
+	width: auto;
+	max-width: 100%;
+}
+
+.month img {
+	/*border-radius: 20px;*/
+	zoom: 2;
+	/*increase if you have very small images*/
+
+	display: block;
+	margin: auto;
+	height: auto;
+	max-height: 60%;
+	width: auto;
+	max-width: 60%;
+}
+
+#rightSide {
+	vertical-align: top !important;
+	width: 1.2in !important;
+	position: relative;
+	margin: 0in 0in 0in 0in !important;
+	margin: 0in 0.5in 0.2in 0in;
+	background-color: inherit;
+	float: right;
+}
+
+#bottomOfSection {
+	text-align: center;
+	padding: 0.1in 10px 0.1in 10px !important;
+	margin: 1px 0in 0in 0in !important;
+	height: 0.45in;
+	/*border-radius: 25%;*/
+	font-size: 13pt;
+}
+
+#gift2 #imgDiv img {
+	border-radius: 100%;
+}
+
+#gift3 #imgDiv img {
+	border-radius: 10px/20px;
+}
+
+#gift4 #imgDiv img {
+	border-radius: 0in;
+	border-top-left-radius: 25%;
+	border-top-right-radius: 25%;
+}
+
+#bottomOfSection h4 {
+	text-align: center;
+	font-size: 10pt;
+}
+@page {
+	margin: 0;
+	print-color-adjust: exact !important;
+	-webkit-print-color-adjust: exact !important;
+	-moz-print-color-adjust: exact !important;
+	page-break-inside: avoid !important;
+	background: white !important;
+	vertical-align: top;
+}
+
+.zoomMe {
+	transform: scale(0.5);
+	-moz-transform: scale(0.5);
+	-webkit-transform: scale(0.5);
+}
+
+
+/*Gallery*/
+
+
+#gal-container {
+	background: #262626;
+}
+.gallery-container {
+	white-space: nowrap;
+	overflow-x: scroll;
+	overflow-y: hidden;
+	padding: 20px;
+}
+.gallery-item {
+	position: relative;
+	display: inline-block;
+	margin: 20px 20px;
+	/*box-shadow: 2px 2px 4px black;*/
+	box-shadow: 1px 1px 3px 1px black;
+	border-top-right-radius: 4px;
+	width: auto;
+	vertical-align: bottom;
+	cursor: zoom-in;
+	color:white !important;
+	/*border: 10px solid #fff;
+	border-bottom: 45px solid #fff;*/
+}
+
+#infoPg  {
+	padding:0 10% 0 10%;
+}
+
+#infoPg p {
+	padding:0 10% 0 10%;
+}
+
+
+#infoPg  p,#infoPg  li, #infoPg  a{
+	font-size:17px;
+}
+
+#previewModal * {
+	background: #262626;
+	color: #ddc993;
+	top: 0;
+}
+
+#previewModal div {
+	border-color: transparent;
+}
+
+#previewModal .modal-lg {
+	width: 100% !important;
+	padding: 0px !important;
+}
+.previewImg {
+	box-shadow: 2px 2px 4px black;
+	border-top-right-radius: 4px;
+}
+.disabled * {
+	pointer-events: none !important;;
+	background: transparent !important;
+	color: rgba(255,251,235,0.3) !important;
+}
+
+#galBtnL {
+	position: absolute;
+	top: 45% !important;
+	left: 10px;
+}
+#galBtnR {
+	position: absolute;
+	top: 45% !important;
+	right: 10px;
+}
+#galBtnL *, #galBtnR .fa {
+	background-color: transparent !important;
+}
+
+#homeCompName {
+	color: #ddc993 !important;
+}

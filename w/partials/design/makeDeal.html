@@ -1,0 +1,192 @@
+<section class="guestinfo  container-fluid pg animated pulse "  >
+	<div class="hideOnPrint" ng-hide="printSet" style="background: white;">
+		<h1 class="text-center" style="padding-top: 10px;">{{$storage.lan.nameBadge.title}}</h1>
+		<div class="row   center-block ">
+			<div class="col-sm-2 col-xs-12 pull-left ticketContent" style="border-right: 1px solid #EEEEEE;">
+				<h3 class="text-center">{{$storage.lan.nameBadge.content}}</h3>
+				<div class=" form-group">
+					<button   type="button" class="btn btn-default form-control btn-xs"
+					ng-click="$storage.options.customizeDeal=!$storage.options.customizeDeal;">
+						<span class="" ng-show="!$storage.options.customizeDeal">{{$storage.lan.nameBadge.editDeal}}</span>
+						<span class="" ng-show="$storage.options.customizeDeal">{{$storage.lan.nameBadge.editCal}}</span>
+					</button>
+				</div>
+				<hr />
+				<div ng-show="!$storage.options.customizeDeal"  class="fadein fadeout">
+					<form role="form " id="upldForm">
+						<div class="form-group">
+							<label>{{$storage.lan.nameBadge.bizNameInst}}</label>
+							<input class="form-control"  type="text"
+							ng-model="$storage.options.BizName" ng-blur="downloadImages($storage.options.BizName + '/logo', false)">
+						</div>
+						<div class="form-group" id="eBizSimClick">
+							<label>{{$storage.lan.nameBadge.eBiz}}</label>
+							<input class="form-control"  type="text"
+							ng-model="$storage.options.bizDets">
+						</div>
+						<div class="form-group" id="pNumSimClick">
+							<label>{{$storage.lan.nameBadge.pNum}}</label>
+							<input class="form-control"  type="text"
+							ng-model="$storage.options.pNum">
+						</div>
+						<div class="form-group">
+							<button ngf-select="uploadFiles($file, $invalidFiles, $storage.options.BizName + '/logo')"  ng-model="$storage.companyLogo" accept="image/*"
+							class="btn  btn-file btn-default">
+								{{$storage.lan.nameBadge.selectLogo}}
+							</button>
+						</div>
+						<hr />
+						<div class="form-group">
+							<button ngf-select ng-model="$storage.UpldImgs[0]" accept="image/*"
+							class="btn  btn-file btn-default">
+								{{$storage.lan.nameBadge.select}}
+							</button>
+						</div>
+						<div class="form-group">
+							<label>{{$storage.lan.nameBadge.eMsg}}</label>
+							<input class="form-control"  type="text" ng-change="getOnePerline ($storage.options.personalizedMsg)"
+							ng-model="$storage.options.personalizedMsg">
+						</div>
+					</form>
+					<hr />
+					<div class="col-xs-12">
+						<div class="col-xs-12" >
+							<div class="text-center row ticketColors">
+								<div ng-repeat="dCols in $storage.defaultColors" class="col-xs-6 text-center center-block" id="def-cols"
+								ng-click="selectDefaultCol(dCols.bg,dCols.txt)">
+									<span class="col-xs-6" ng-style="{'background-color': dCols.bg}"><i class="glyphicon glyphicon-stop"></i> </span>
+									<span class="col-xs-6" ng-style="{'background-color': dCols.txt}"><i class="glyphicon glyphicon-stop"></i> </span>
+								</div>
+							</div >
+						</div>
+					</div>
+				</div>
+				<div ng-show="$storage.options.customizeDeal" class="fadein fadeout">
+					<form role="form ">
+						<p ng-hide="$storage.options.dealDesc">
+							{{$storage.lan.nameBadge.dealAddUp}}
+						</p>
+						<div class="form-group">
+							<label>{{$storage.lan.nameBadge.bizNameInst}}</label>
+							<input class="form-control"  type="text"
+							ng-model="$storage.options.BizName">
+						</div>
+						<div class="form-group">
+							<label>{{$storage.lan.nameBadge.pNum}}</label>
+							<input class="form-control"  type="text"
+							ng-model="$storage.options.pNum">
+						</div>
+						<div class="form-group">
+							<label>{{$storage.lan.nameBadge.dealDesc}}</label>
+							<input class="form-control"  type="text"
+							ng-model="$storage.options.dealDesc">
+						</div>
+						<div class="form-group">
+							<label>{{$storage.lan.nameBadge.dealSavings}}</label>
+							<input class="form-control"  type="text"
+							ng-model="$storage.options.dealSavings">
+						</div>
+						<div class="form-group">
+							<label>{{$storage.lan.nameBadge.dealStart}}</label>
+							<input class="form-control"  type="text"
+							ng-model="$storage.options.dealStart">
+						</div>
+						<div class="form-group">
+							<label>{{$storage.lan.nameBadge.dealEnd}}</label>
+							<input class="form-control"  type="text"
+							ng-model="$storage.options.dealEnd">
+						</div>
+						<p ng-show="$storage.options.dealDesc">
+							{{$storage.lan.nameBadge.dealAddDown}}
+						</p>
+						<a ng-click="updateDeal($storage.options.dealDesc, $storage.options.dealSavings
+						,$storage.options.dealStart,$storage.options.dealEnd)"
+						class="btn  btn-file btn-default"  ng-href="{{'#!/d/' + $storage.options.BizName}}" target="_blank"> {{$storage.lan.nameBadge.submitDeal}} </a>
+						<hr />
+						<p ng-show="$storage.options.dealDesc">
+							{{$storage.lan.nameBadge.addGalItem}}
+						</p>
+						<button ngf-select="uploadFiles($file, $invalidFiles, $storage.options.BizName + '/gal/1')"  ng-model="galItem1" accept="image/*"
+						class="btn  btn-file btn-default form-control">
+							1
+						</button>
+						<img ngf-src="galItem1"  class="logo center-block" ng-hide="true" style="max-width: 60px"/>
+						<button ngf-select="uploadFiles($file, $invalidFiles, $storage.options.BizName + '/gal/2')"  ng-model="galItem2" accept="image/*"
+						class="btn  btn-file btn-default form-control">
+							2
+						</button>
+						<img ngf-src="galItem2"  class="logo center-block" ng-hide="true" style="max-width: 60px"/>
+						<button ngf-select="uploadFiles($file, $invalidFiles, $storage.options.BizName + '/gal/3')"  ng-model="galItem3" accept="image/*"
+						class="btn  btn-file btn-default form-control">
+							3
+						</button>
+						<img ngf-src="galItem3"  class="logo center-block" ng-hide="true" style="max-width: 60px"/>
+						<button ngf-select="uploadFiles($file, $invalidFiles, $storage.options.BizName + '/gal/4')"  ng-model="galItem4" accept="image/*"
+						class="btn  btn-file btn-default form-control">
+							4
+						</button>
+						<img ngf-src="galItem4"  class="logo center-block" ng-hide="true" style="max-width: 60px"/>
+						<button ngf-select="uploadFiles($file, $invalidFiles, $storage.options.BizName + '/gal/5')"  ng-model="galItem5" accept="image/*"
+						class="btn  btn-file btn-default form-control">
+							5
+						</button>
+						<img ngf-src="galItem5"  class="logo center-block" ng-hide="true" style="max-width: 60px"/>
+					</form>
+				</div>
+			</div>
+			<div class="col-sm-10 col-xs-12 ticketPreview">
+				<h3 class="text-center row center-block">{{$storage.lan.nameBadge.preview}}</h3>
+				<div class="row center text-center center-block" >
+					<slick autoplaySpeed="500" fade="true" dots="true" infinite="true" arrows="true" class="choices">
+						<div ng-repeat="format in $storage.user.styles.badgeFormats.formats " class="center-block" ng-class="{'zoomMe' : showSide}">
+							<div ng-include="format"></div>
+						</div>
+					</slick>
+				</div>
+			</div>
+		</div>
+	</div >
+	<div ng-hide="!printSet">
+		<div class="pull-left "    style="position: fixed;top: 25px;left: 25px" >
+			<button   type="button" class="btn btn-default  btn-xs"
+			ng-click="printSet=!printSet;">
+				<span class="glyphicon glyphicon-chevron-left"></span>
+			</button>
+		</div>
+		<div ng-include="'partials/badges/bPrint.html'"></div>
+	</div>
+	<div>
+		<button ng-hide="true" ng-click="$storage.$reset({ })">
+			Clear localStorage
+		</button>
+	</div>
+</section>
+<div class=" center-block row text-center"  style="position: fixed;top: 25px;right: 25px" ng-hide="printSet">
+	<button   type="button" class="btn btn-default btn-lg"
+	ng-click="$storage.user.styles.setSelectedInd();printSet=!printSet;">
+		<span class="glyphicon glyphicon-print"></span>
+	</button>
+</div>
+<div class="pull-right "   style="position: fixed;top: 25px;right: 25px"  ng-hide="!printSet">
+	<button   type="button" class="btn btn-primary  btn-lg"
+	ng-click="printBadges()">
+		<span class="glyphicon glyphicon-print"></span>
+	</button>
+</div>
+<div style="position:fixed;bottom: 10px;right: 25px" class="fixed-bottom" ng-show='loadedDeal["$resolved"]'>
+	<button   type="button" class="btn btn-default btn-lg" ng-click="showSide=!showSide">
+		<span class="glyphicon glyphicon-resize-full " ng-show="showSide"></span>
+		<span class="glyphicon glyphicon-resize-small " ng-show="!showSide"></span>
+	</button>
+</div>
+<div class="row text-center" ng-hide='loadedDeal["$resolved"]' id="loadingCover">
+	<img class="img-responsive center-block" src="images/box.gif" style="margin-top: 20%;" />
+</div>
+<div class="row text-center" ng-hide='!$storage.options.uploading' id="loadingCover">
+	<img class="img-responsive center-block" src="images/flickr.gif" style="margin-top: 20%;" />
+	<p style="font-size: 25;font-weight: bold;">
+		{{uploadProgress}} Uploading...
+	</p>
+</div>
+<div ng-include="'partials/lan.html'"></div>
+<img ngf-src="$storage.companyLogo"  class="logo center-block" ng-hide="true" style="max-width: 100px"/>

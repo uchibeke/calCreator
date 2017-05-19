@@ -1,0 +1,26 @@
+<section class=" text-center "
+style="position:fixed;top:0;left:0;right:0;bottom:0;height:100%;overflow: hidden;">
+	<div class="" id="home_bg">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 jumbotron"
+		id="home_welcome">
+			<div class="text-center row center-block" style="margin-top: 130px" >
+				<h2 class="text-center"> Cal Creator </h2>
+			</div>
+			<div class="row form-group">
+				<input type="text" ng-model="$storage.info.bizName"  class="form-control"/>
+			</div>
+			<a ng-click="setItem($storage.info.bizName, '/name');" class="btn btn-file btn-primary btn-lg" ng-disabled="!$storage.info.bizName"
+			ng-href="#!/make"> Enter </a>
+		</div>
+		<div class=" center-block text-center row home_center" >
+			<div class="row" style="margin-top: 350px;"  id="homePg">
+				<slick autoplay="true" autoplaySpeed="2000" fade="true" infinite="true" arrows="true" class="choices">
+					<div ng-repeat="why in $storage.lan.home.whyUse ">
+						<h1 style="padding-top: 20px;color: #fff;" >{{why}}</h1>
+					</div>
+				</slick>
+			</div>
+		</div>
+	</div>
+</section>
+<div ng-include="'partials/lan.html'"></div>
